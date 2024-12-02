@@ -1,7 +1,7 @@
 // import { source } from '@/lib/source';;
 import { Logo } from '@/components/Logo/Logo';
 import type { HomeLayout } from '@/utils/types';
-import { Facebook, Globe, Twitter } from 'lucide-react';
+import { Github, Facebook, Globe, Twitter } from 'lucide-react';
 
 // shared configuration for site (home layout)
 export const baseOptions: HomeLayout = {
