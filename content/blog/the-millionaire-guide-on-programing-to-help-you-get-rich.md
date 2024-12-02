@@ -13,17 +13,13 @@ category:
 image:  /images/code.jpg
 author: Jeffery Schwartz
 ---
-import { Callout } from 'fumadocs-ui/components/callout';
 
 Mollit enim excepteur id aliquip ipsum enim minim officia excepteur tempor ea nisi eu. Incididunt consequat incididunt occaecat quis exercitation id fugiat ipsum tempor do ipsum dolor anim amet.
-# Note
-
-<Callout title="Note:" type="info"> Enim dolore esse velit eiusmod duis laboris adipisicing labore Lorem fugiat.</Callout>
 
 ## Deserunt dolore
 `Aute elit` qui anim Voluptate fugiat eiusmod eiusmod occaecat esse officia qui. Elit elit velit cillum eiusmod aliquip ullamco exercitation sint. Veniam aute ullamco aliqua ex excepteur in nisi veniam occaecat aliquip.
 
-![Computer](https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+![Computer](https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg)
 
 ## Esse nostrud
 Esse nostrud et cillum velit sit ad. Pariatur laboris sint enim quis deserunt ad in voluptate ea labore amet non. 
@@ -58,6 +54,8 @@ Sint laboris in do nisi aliqua deserunt minim. Ullamco duis laboris elit do labo
 
 ## Ut ea eu 
 
-Sunt et ullamco sint aute consequat minim. Nostrud quis in magna sit commodo incididunt consequat in. Adipisicing magna ea quis dolor in fugiat eu anim ad aliquip sunt nisi. Ex laboris exercitation commodo est irure incididunt elit anim fugiat ea labore. 
+Sunt et ullamco sint aute consequat minim. Nostrud quis in magna sit commodo incididunt consequat in. Adipisicing magna ea quis dolor in fugiat eu anim ad aliquip sunt nisi. 
+
+---
 
 Ut nulla voluptate minim mollit enim Lorem. Occaecat labore duis fugiat duis exercitation aliqua et cupidatat ex anim et esse eiusmod. Mollit id minim mollit anim adipisicing quis.

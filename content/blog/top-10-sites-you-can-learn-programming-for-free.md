@@ -15,7 +15,7 @@ author: Annie Dean
 
 Culpa irure occaecat laboris consectetur magna. Adipisicing irure minim cupidatat in nulla et. In exercitation qui sit aliquip sint consectetur ex quis. 
 
-![Computer](https://images.pexels.com/photos/129208/pexels-photo-129208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+![Computer](https://images.pexels.com/photos/129208/pexels-photo-129208.jpeg)
 
 Exercitation consequat ut eu ea occaecat quis ipsum exercitation adipisicing ut. Sunt minim ex elit sint cupidatat Lorem magna ad ad. 
 

@@ -17,7 +17,7 @@ author: Jeanne Ballard
 
 Cillum deserunt excepteur dolor nostrud nisi. Laborum occaecat magna est ex non est elit. Velit cupidatat magna eiusmod aute proident laboris fugiat ut laboris nisi. Velit amet qui elit irure qui ut.
 
-![photos](https://images.pexels.com/photos/3374204/pexels-photo-3374204.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 "hello wold")
+![photos](https://images.pexels.com/photos/3374204/pexels-photo-3374204.jpeg)
 Pariatur adipisicing est incididunt deserunt nostrud exercitation reprehenderit ea sunt nostrud anim eu laboris. Cillum deserunt excepteur dolor nostrud nisi. 
 
 > Laborum occaecat magna est ex non est elit.

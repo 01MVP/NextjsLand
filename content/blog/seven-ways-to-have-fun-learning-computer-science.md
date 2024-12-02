@@ -26,7 +26,7 @@ Nulla labore quis dolor cillum irure mollit laborum magna in amet. Velit officia
 ### Commodo fugiat 
 ex pariatur Lorem tempor sunt nostrud sunt exercitation eiusmod duis veniam deserunt. Incididunt sint sunt aute consequat magna officia sint deserunt. Aute duis labore non dolore minim veniam duis dolore non.
 
-![Computer](https://images.pexels.com/photos/792199/pexels-photo-792199.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+![Computer](https://images.pexels.com/photos/792199/pexels-photo-792199.jpeg)
 
 ## Id officia 
 Consectetur est velit consequat minim fugiat ut deserunt magna sint eiusmod eu. Nostrud irure est aute reprehenderit dolore ipsum commodo ad qui velit adipisicing aliquip nostrud. Est occaecat aliqua mollit voluptate. 

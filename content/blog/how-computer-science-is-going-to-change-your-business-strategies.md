@@ -12,10 +12,12 @@ category:
 image: /images/technology.jpg
 author: Emilio Tate
 ---
+
 Duis velit nisi `pariatur incididunt` culpa commodo ex nisi cillum culpa nisi aliquip et cupidatat. Cupidatat occaecat dolore dolor aute enim consequat nulla dolor dolor reprehenderit irure reprehenderit nisi. Irure ullamco cillum irure velit deserunt cupidatat Lorem mollit est voluptate. 
 
 ## Occaecat cupidatat
-Occaecat cupidatat deserunt quis consequat incididunt dolore voluptate. Excepteur excepteur occaecat veniam culpa duis ex eu in aute consequat aute occaecat incididunt in. 
+*Occaecat cupidatat* deserunt quis consequat incididunt dolore voluptate. Excepteur excepteur occaecat veniam culpa duis ex eu in aute consequat aute occaecat incididunt in:
+
 1. Incididunt veniam reprehenderit.
 2. in id quis eu eiusmod eu id veniam Lorem mollit. 
 3. Minim eu id magna anim nisi `officia cupidatat` aliqua non.
@@ -47,6 +49,8 @@ Ullamco sit exercitation fugiat elit cupidatat irure proident voluptate minim pa
 
 ## Consectetur
 Consectetur nostrud amet adipisicing irure Lorem qui et eu tempor amet fugiat occaecat. Deserunt exercitation elit deserunt amet in veniam qui. Sint cupidatat adipisicing nostrud consequat sint esse aute dolore fugiat aliquip nulla aute cillum.
+
+---
 
 Et irure aute incididunt aliquip esse officia eiusmod est aliquip ipsum veniam aliqua fugiat dolor. Deserunt sit officia pariatur consequat duis occaecat quis deserunt adipisicing nostrud voluptate ea aliquip.
 

@@ -15,8 +15,6 @@ image: /images/hanoi-natural.jpg
 author: Ashley Paul
 ---
 
-import { Callout } from 'fumadocs-ui/components/callout';
-
 **Qui nulla** sint consectetur et veniam. *Consequat magna* duis ea esse culpa quis. Do anim reprehenderit nulla officia pariatur qui nisi cupidatat ex et consectetur ullamco nostrud. Et ipsum occaecat ea labore adipisicing in aute est ipsum cillum. `Voluptate ipsum` dolore consequat ex ad exercitation consequat anim laboris sit dolore incididunt. Laboris duis proident excepteur pariatur aliquip anim culpa ea ullamco.
 
 ## Occaecat Magna
@@ -41,9 +39,7 @@ Fugiat elit velit ad non consequat in et ea duis nulla eiusmod non reprehenderit
 - Labore dolor nisi sunt pariatur ipsum esse irure fugiat non. 
 - Aliqua pariatur cupidatat enim velit esse sint esse labore dolor esse anim incididunt.
 
-<Callout type="error">
-Nam faucibus nulla eu eros blandit.
-</Callout>
+---
 
 **Proident nisi** do enim enim cillum ea sit irure veniam aute mollit aute et. Reprehenderit excepteur pariatur eiusmod adipisicing anim eu non consectetur adipisicing incididunt aliqua ad. Commodo anim deserunt reprehenderit aute ut nostrud in mollit cillum voluptate.
 
