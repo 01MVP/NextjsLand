@@ -13,13 +13,8 @@ export interface TypeBlogNav {
   name: string; url: string
 }
 
-export interface TypeTags{
-  title: string;
-}
-
 export interface HomeLayout extends BaseLayoutProps {
   social?: TypeSocial[];
   faqs?: TypeFAQ[]
   blog_nav?: TypeBlogNav[]
-  tags?: TypeTags
 }

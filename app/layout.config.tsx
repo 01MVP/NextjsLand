@@ -23,9 +23,6 @@ export const baseOptions: HomeLayout = {
     { name: "Photography", url: "/blog/tag/photography" },
     { name: "Programming", url: "/blog/tag/programming" }
   ],
-  tags: {
-    title: "Our tag here"
-  },
   social: [{
     icon: <Github />,
     name: "Github",
