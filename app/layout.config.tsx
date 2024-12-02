@@ -1,11 +1,11 @@
 // import { source } from '@/lib/source';;
 import { Logo } from '@/components/Logo/Logo';
 import type { HomeLayout } from '@/utils/types';
-import { Github, Facebook, Globe, Twitter } from 'lucide-react';
+import { Facebook, Globe, Twitter } from 'lucide-react';
 
 // shared configuration for site (home layout)
 export const baseOptions: HomeLayout = {
-  githubUrl: 'https://github.com/fuma-nama/fumadocs',
+  githubUrl: 'https://github.com/frontendweb3/Nextify',
   nav: {
     title: (<Logo />),
     transparentMode: 'top'
@@ -16,7 +16,6 @@ export const baseOptions: HomeLayout = {
     { url: "/blog", text: "Blog" },
     { url: "/page/about", text: "About us" },
     { url: "/page/changelog", text: "Change log" },
-    { url: "https://github.com/frontendweb3/Nextify", text: "Github", type: 'icon', icon: <Github /> },
     { url: "https://twitter.com/Official_R_deep", text: "Twitter", type: 'icon', icon: <Twitter /> }
   ],
   blog_nav: [
