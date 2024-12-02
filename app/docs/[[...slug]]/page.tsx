@@ -21,10 +21,10 @@ export default async function Page(props: {
     <DocsPage toc={page.data.toc} full={page.data.full}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
-      <DocsBody>
+      <DocsBody className="-mt-8">
         <MDX components={{ ...defaultMdxComponents }} />
       </DocsBody>
-    </DocsPage>
+      </DocsPage>
   );
 }
 
