@@ -55,7 +55,7 @@ Every feature in the nextify template comes from fumadocs itself.
 
 ![Nextify Blog](./.github/images/nextify-blog.png)
 
-![Nextify Reading Page](./.github/images/nextify-reading.png)
+![Nextify Reading Page](./.github/images/nextify-read.png)
 
 ![Nextify Page](./.github/images/nextify-page.png)
 
