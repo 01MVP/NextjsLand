@@ -98,7 +98,7 @@ Open <http://localhost:3000> with your browser to see the result.
 
 ## MetaData/Frontmatter
 
-Frontmatter for creating `**new documentation file**`.
+Frontmatter for creating **`new documentation file`**.
 
 ```markdown
 ---
@@ -110,7 +110,7 @@ Ut ullamco et aliqua `fugiat quis` Lorem aliquip in.
 
 ```
 
-Frontmatter for creating ``**new Blog post**`.
+Frontmatter for creating **`new Blog post`**.
 
 ```markdown
 ---
@@ -135,7 +135,7 @@ Cupidatat voluptate deserunt non ea exercitation sit consequat ullamco ex nostru
 
 ```
 
-Frontmatter for `**creating new page**`.
+Frontmatter for **`creating new page`**.
 
 
 ```markdown
