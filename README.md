@@ -1,8 +1,6 @@
 <p align="center">
-  <a href="https://section-blog-theme-docs.vercel.app">
-      <img src="https://cdn.jsdelivr.net/gh/frontendweb3/nextify/.github/images/nextify.svg" height="128">
+    <img src="https://cdn.jsdelivr.net/gh/frontendweb3/nextify/.github/images/nextify-logo.svg" height="128">
     <h1 align="center">Nextify - Open sourec Template</h1>
-  </a>
 </p>
 
 <div style="display:flex; margin: 5px auto;">
@@ -22,7 +20,7 @@
 
 ---
 
-Nextify template is a prebuilt template for building documentation sites using [Next.js](https://nextjs.org), [Tailwind CSS](https://tailwindcss.com), and [Fumadocs](https://fumadocs.vercel.app/docs/ui/comparisons).
+**Nextify template** is a prebuilt template for building documentation sites using [Next.js](https://nextjs.org), [Tailwind CSS](https://tailwindcss.com), and [Fumadocs](https://fumadocs.vercel.app/docs/ui/comparisons).
 
 <div style="margin: 10px auto;width:100%;padding-bottom: .3em;font-size: 2em;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));"></div>
 
