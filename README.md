@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://cdn.jsdelivr.net/gh/frontendweb3/nextify/.github/images/nextify-logo.svg" height="128">
+    <img style="width: 290px;" src="https://cdn.jsdelivr.net/gh/frontendweb3/nextify/.github/images/nextify-logo.svg" height="128">
     <h1 align="center">Nextify - Open sourec Template</h1>
 </p>
 
