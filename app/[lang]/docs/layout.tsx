@@ -1,8 +1,7 @@
 import type { ReactNode } from 'react';
-import { DocsLayout } from 'fumadocs-ui/layouts/docs';
-
-import { baseOptions } from '@/app/[lang]/layout.config';
 import { source } from '@/lib/source';
+import { NavigationProvider } from '@/components/Providers/NavigationProvider';
+import { DocsLayoutWithI18n } from '@/components/Layouts/DocsLayoutWithI18n';
 
 export default async function Layout({
   params,
@@ -14,9 +13,11 @@ export default async function Layout({
   const lang = (await params).lang;
 
   return (
-    <DocsLayout tree={source.pageTree[lang]} {...baseOptions}>
-      {children}
-    </DocsLayout>
+    <NavigationProvider>
+      <DocsLayoutWithI18n tree={source.pageTree[lang]}>
+        {children}
+      </DocsLayoutWithI18n>
+    </NavigationProvider>
   );
 }
 

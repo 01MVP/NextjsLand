@@ -1,15 +1,19 @@
 import type { ReactNode } from 'react';
-import { HomeLayout } from 'fumadocs-ui/layouts/home';
-import { baseOptions } from '@/app/[lang]/layout.config';
 import { Banner } from 'fumadocs-ui/components/banner';
 import { Footer } from "@/components/Footer/Footer";
+import { NavigationProvider } from '@/components/Providers/NavigationProvider';
+import { HomeLayoutWithI18n } from '@/components/Layouts/HomeLayoutWithI18n';
 
 export default function Layout({ children }: { children: ReactNode; }): React.ReactElement {
-  return (<>
-    <Banner id="banner-1">
-      I failed my way to success - Thomas Edison
-    </Banner>
-    <HomeLayout  {...baseOptions}>{children}</HomeLayout>
-    <Footer />
-  </>);
+  return (
+    <NavigationProvider>
+      <Banner id="banner-1">
+        I failed my way to success - Thomas Edison
+      </Banner>
+      <HomeLayoutWithI18n>
+        {children}
+      </HomeLayoutWithI18n>
+      <Footer />
+    </NavigationProvider>
+  );
 }

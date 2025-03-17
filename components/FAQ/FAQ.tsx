@@ -2,12 +2,15 @@
 
 import { Link } from '@/app/i18n/navigation';
 import FAQItem from "./FAQItem.client";
-import { baseOptions } from '@/app/[lang]/layout.config';
 import { useTranslations } from 'next-intl';
 
 export function FAQ() {
   const t = useTranslations('FAQ');
-  const { faqs } = baseOptions;
+  const faqQuestions = t.raw('questions') as Array<{
+    key: number;
+    question: string;
+    answer: string;
+  }>;
   
   return (
     <section>
@@ -21,13 +24,20 @@ export function FAQ() {
           </p>
         </div>
         <div className="mt-10 flex w-full max-w-4xl flex-col">
-          {faqs?.map((faq) => <FAQItem key={faq.key} answer={faq.answer} question={faq.question} /> )}
+          {faqQuestions?.map((faq) => (
+            <FAQItem 
+              key={faq.key} 
+              id={faq.key} 
+              answer={faq.answer} 
+              question={faq.question} 
+            />
+          ))}
         </div>
         <p className="font-inter mx-auto mt-12 text-base  text-center">
-          Can't find the answer you're looking for? Reach out to our
+          {t('support')}
           <Link href="#" className=" font-bold">
             {" "}
-            customer support team.
+            {t('supportLink')}
           </Link>
         </p>
       </div>

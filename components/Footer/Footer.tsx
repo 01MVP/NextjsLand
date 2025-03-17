@@ -1,12 +1,31 @@
+'use client';
+
 import { Logo } from '@/components/Logo/Logo';
 import { Newsletter } from "@/components/Newsletter/Newsletter"
-import { baseOptions } from '@/app/[lang]/layout.config';
 import { Link } from '@/app/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import { Github, Facebook, Globe } from 'lucide-react';
 
 export function Footer() {
   const t = useTranslations('Footer');
-  const { social } = baseOptions
+  const socialData = t.raw('social') as Array<{
+    name: string;
+    url: string;
+  }>;
+
+  // Map social icons based on name
+  const getSocialIcon = (name: string) => {
+    switch (name) {
+      case 'Github':
+        return <Github />;
+      case 'Facebook':
+        return <Facebook />;
+      case 'Website':
+        return <Globe />;
+      default:
+        return <Globe />;
+    }
+  };
 
   return (
     <footer className="block">
@@ -23,12 +42,12 @@ export function Footer() {
             </div>
             <div className="mt-12 grid w-full max-w-52 grid-flow-col grid-cols-3 mx-auto gap-3 mb-8 md:mb-0">
               {
-                social?.map(link => <Link
+                socialData?.map(link => <Link
                   key={link.name}
                   href={link.url}
                   className="mx-auto flex max-w-6 flex-col items-center justify-center text-fd-foreground"
                 >
-                  {link.icon}
+                  {getSocialIcon(link.name)}
                 </Link>
                 )
               }
@@ -37,124 +56,124 @@ export function Footer() {
 
           <div className="flex flex-col items-start font-semibold">
             <div className="mb-4">
-              <p className="font-bold uppercase">Solution</p>
+              <p className="font-bold uppercase">{t('solution.title')}</p>
             </div>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              Marketing
+              {t('solution.marketing')}
             </Link>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              Analytics
+              {t('solution.analytics')}
             </Link>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              Commerce
+              {t('solution.commerce')}
             </Link>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              Insights
+              {t('solution.insights')}
             </Link>
           </div>
           <div className="flex flex-col items-start font-semibold">
             <div className="mb-4">
-              <p className="font-bold uppercase">Support</p>
+              <p className="font-bold uppercase">{t('support.title')}</p>
             </div>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              Pricing
+              {t('support.pricing')}
             </Link>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              Documentation
+              {t('support.documentation')}
             </Link>
             <Link
               href="#"
               className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
-              Guides
+              {t('support.guides')}
             </Link>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              API&nbsp;Status
+              {t('support.apiStatus')}
             </Link>
           </div>
           <div className="flex flex-col items-start font-semibold">
             <div className="mb-4">
-              <p className="font-bold uppercase">Docs</p>
+              <p className="font-bold uppercase">{t('docs.title')}</p>
             </div>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              Pricing
+              {t('docs.pricing')}
             </Link>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              API&nbsp;Guide
+              {t('docs.apiGuide')}
             </Link>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              API Status
+              {t('docs.apiStatus')}
             </Link>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              Dev Guide
+              {t('docs.devGuide')}
             </Link>
           </div>
           <div className="flex flex-col items-start font-semibold">
             <div className="mb-4">
-              <p className="font-bold uppercase">Comapny</p>
+              <p className="font-bold uppercase">{t('company.title')}</p>
             </div>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              About
+              {t('company.about')}
             </Link>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              Blog
+              {t('company.blog')}
             </Link>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              Jobs
+              {t('company.jobs')}
             </Link>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              Press
+              {t('company.press')}
             </Link>
             <Link
               href="#"
               className="py-2 text-sm font-normal  transition hover:text-blue-600"
             >
-              Partners
+              {t('company.partners')}
             </Link>
           </div>
         </div>

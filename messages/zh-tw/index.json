@@ -23,7 +23,31 @@
   },
   "FAQ": {
     "title": "常見問題",
-    "description": "查找有關 Nextify 的常見問題的答案"
+    "description": "查找有關 Nextify 的常見問題的答案",
+    "questions": [
+      {
+        "key": 1,
+        "question": "這個主題與市場上的其他主題有何不同？",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+      },
+      {
+        "key": 2,
+        "question": "您對 Devjoy 資產分發的政策是什麼？",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+      },
+      {
+        "key": 3,
+        "question": "我如何為 Devjoy 做出貢獻？",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+      },
+      {
+        "key": 4,
+        "question": "您還有哪些其他主題？",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+      }
+    ],
+    "support": "找不到您要找的答案？請聯繫我們的",
+    "supportLink": "客戶支持團隊。"
   },
   "Testimonial": {
     "title": "用戶評價",
@@ -39,14 +63,62 @@
     "description": "Phasellus a nulla in neque lacinia posuere. Etiam auctor facilisis augue vel gravida.",
     "solution": {
       "title": "解決方案",
-      "marketing": "營銷",
-      "analytics": "分析",
-      "commerce": "商務",
+      "marketing": "市場營銷",
+      "analytics": "數據分析",
+      "commerce": "電子商務",
       "insights": "洞察"
     },
-    "copyright": "© 版權所有 2021。保留所有權利。",
+    "support": {
+      "title": "支持",
+      "pricing": "定價",
+      "documentation": "文檔",
+      "guides": "指南",
+      "apiStatus": "API 狀態"
+    },
+    "docs": {
+      "title": "文檔",
+      "pricing": "定價",
+      "apiGuide": "API 指南",
+      "apiStatus": "API 狀態",
+      "devGuide": "開發指南"
+    },
+    "company": {
+      "title": "公司",
+      "about": "關於",
+      "blog": "博客",
+      "jobs": "工作機會",
+      "press": "新聞",
+      "partners": "合作夥伴"
+    },
+    "social": [
+      {
+        "name": "Github",
+        "url": "https://github.com/officialrajdeepsingh"
+      },
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com/officialrajdeepsingh"
+      },
+      {
+        "name": "Website",
+        "url": "https://officialrajdeepsingh.dev"
+      }
+    ],
+    "copyright": "© 2021 版權所有",
     "terms": "服務條款",
-    "license": "許可證",
+    "license": "許可協議",
     "privacy": "隱私政策"
+  },
+  "Navigation": {
+    "home": "首頁",
+    "documentation": "文檔",
+    "blog": "博客",
+    "about": "關於我們",
+    "changelog": "更新日誌"
+  },
+  "BlogNav": {
+    "computerScience": "計算機科學",
+    "photography": "攝影",
+    "programming": "編程"
   }
 } 

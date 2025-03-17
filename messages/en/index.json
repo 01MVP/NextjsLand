@@ -23,7 +23,31 @@
   },
   "FAQ": {
     "title": "Frequently Asked Questions",
-    "description": "Find answers to common questions about Nextify"
+    "description": "Find answers to common questions about Nextify",
+    "questions": [
+      {
+        "key": 1,
+        "question": "How this theme is different from others in market?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+      },
+      {
+        "key": 2,
+        "question": "What is your policy on distribution of Devjoy assets?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+      },
+      {
+        "key": 3,
+        "question": "How can I contribute to Devjoy?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+      },
+      {
+        "key": 4,
+        "question": "What other themes do you have?",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+      }
+    ],
+    "support": "Can't find the answer you're looking for? Reach out to our",
+    "supportLink": "customer support team."
   },
   "Testimonial": {
     "title": "What our users say",
@@ -44,9 +68,57 @@
       "commerce": "Commerce",
       "insights": "Insights"
     },
+    "support": {
+      "title": "Support",
+      "pricing": "Pricing",
+      "documentation": "Documentation",
+      "guides": "Guides",
+      "apiStatus": "API Status"
+    },
+    "docs": {
+      "title": "Docs",
+      "pricing": "Pricing",
+      "apiGuide": "API Guide",
+      "apiStatus": "API Status",
+      "devGuide": "Dev Guide"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About",
+      "blog": "Blog",
+      "jobs": "Jobs",
+      "press": "Press",
+      "partners": "Partners"
+    },
+    "social": [
+      {
+        "name": "Github",
+        "url": "https://github.com/officialrajdeepsingh"
+      },
+      {
+        "name": "Facebook",
+        "url": "https://www.facebook.com/officialrajdeepsingh"
+      },
+      {
+        "name": "Website",
+        "url": "https://officialrajdeepsingh.dev"
+      }
+    ],
     "copyright": "© Copyright 2021. All rights reserved.",
     "terms": "Terms of Service",
     "license": "License",
     "privacy": "Privacy Policy"
+  },
+  "Navigation": {
+    "home": "Home",
+    "documentation": "Documentation",
+    "blog": "Blog",
+    "about": "About us",
+    "changelog": "Change log"
+  },
+  "BlogNav": {
+    "computerScience": "Computer Science",
+    "photography": "Photography",
+    "programming": "Programming"
   }
 } 
