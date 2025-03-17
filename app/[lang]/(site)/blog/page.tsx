@@ -3,7 +3,7 @@ import { blog } from '@/lib/source';
 import { baseOptions } from '@/app/[lang]/layout.config';
 import { createMetadata } from "@/utils/metadata";
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from '@/app/i18n/navigation';
 
 export default function page() {
 

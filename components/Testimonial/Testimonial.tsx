@@ -1,7 +1,12 @@
+'use client';
+
 import React from 'react'
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 export function Testimonial() {
+  const t = useTranslations('Testimonial');
+  
   const testimonial = [
     {  key: 1, name: "David James", title: "CEO / Chairman", message: "Cras consectetur ornare id orci nisi, arcu, sagittis sit erat. Viverra ut ultricies aliquam senectus lectus non. Magna facilisis venenatis lectus pulvinar nec.", image: "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg" },
     {  key: 2, name: "Spencer Quick", title: "CEO/ Cofounder", message: "Cras consectetur ornare id orci nisi, arcu, sagittis sit erat. Viverra ut ultricies aliquam senectus lectus non. Magna facilisis venenatis lectus pulvinar nec.", image: "https://images.pexels.com/photos/5439472/pexels-photo-5439472.jpeg" },
@@ -15,8 +20,11 @@ export function Testimonial() {
       <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-20">
         {/* Heading Text */}
         <h2 className="mx-auto mb-6 w-full max-w-3xl text-center text-3xl font-semibold md:mb-12  md:text-5xl">
-          What our clients are saying
+          {t('title')}
         </h2>
+        <p className="mx-auto mb-8 w-full max-w-xl text-center text-base">
+          {t('description')}
+        </p>
         {/* Testimonial Wall */}
 
         <div className="mb-8 gap-5 py-4 [column-count:1] md:mb-12 md:[column-count:2] lg:mb-16 lg:[column-count:3]">

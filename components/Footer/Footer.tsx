@@ -1,9 +1,11 @@
 import { Logo } from '@/components/Logo/Logo';
 import { Newsletter } from "@/components/Newsletter/Newsletter"
 import { baseOptions } from '@/app/[lang]/layout.config';
-import Link from "next/link"
-export function Footer() {
+import { Link } from '@/app/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
+export function Footer() {
+  const t = useTranslations('Footer');
   const { social } = baseOptions
 
   return (
@@ -16,8 +18,7 @@ export function Footer() {
             <div className="flex flex-col items-start gap-6">
               <Logo />
               <p>
-                Phasellus a nulla in neque lacinia posuere. Etiam auctor
-                facilisis augue vel gravida.
+                {t('description')}
               </p>
             </div>
             <div className="mt-12 grid w-full max-w-52 grid-flow-col grid-cols-3 mx-auto gap-3 mb-8 md:mb-0">
@@ -158,31 +159,31 @@ export function Footer() {
           </div>
         </div>
         {/* Divider */}
-        <div className="mb-14 mt-16 w-full border-b border-border"></div>
+        <div className="mb-14 mt-16 w-full border-b border-border" />
         <Newsletter />
         {/* Divider */}
-        <div className="mb-14 mt-16 w-full border-b border-border"></div>
+        <div className="mb-14 mt-16 w-full border-b border-border" />
         <div className="flex gap-12 justify-between flex-col md:flex-row  md:items-center">
           <p className="text-sm text-center sm:text-base">
-            © Copyright 2021. All rights reserved.
+            {t('copyright')}
           </p>
           <div className="text-center font-semibold">
             <Link
               href="#"
               className=" py-2  font-normal transition hover:text-blue-600 px-2.5 ">
-              Terms of Service
+              {t('terms')}
             </Link>
             <Link
               href="#"
               className=" py-2 font-normal transition hover:text-blue-600 px-2.5 "
             >
-              License
+              {t('license')}
             </Link>
             <Link
               href="#"
               className=" py-2  font-normal transition hover:text-blue-600 px-2.5 "
             >
-              Privacy Policy
+              {t('privacy')}
             </Link>
           </div>
         </div>

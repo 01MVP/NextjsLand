@@ -1,4 +1,8 @@
 {
+    "i18n-ally.localesPaths": [
+        "messages",
+        "app/i18n"
+    ],
     "workbench.colorCustomizations": {
         "activityBar.background": "#283108",
         "titleBar.activeBackground": "#38450B",

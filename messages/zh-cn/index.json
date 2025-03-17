@@ -1,0 +1,52 @@
+{
+  "Hero": {
+    "title": "使用 Nextify 轻松创建您理想的文档网站",
+    "getStarted": "开始使用",
+    "github": "GitHub"
+  },
+  "Work": {
+    "title": "工作原理",
+    "description": "了解 Nextify 如何简化文档创建",
+    "steps": "3个简单步骤",
+    "step1": {
+      "title": "克隆 Nextify 模板",
+      "description": "Lorem ipsum dolor sit amet, elit ut aliquam, purus sit lorem ipsum dolor sit amet"
+    },
+    "step2": {
+      "title": "删除旧内容",
+      "description": "Lorem ipsum dolor sit amet, elit ut aliquam, purus sit lorem ipsum dolor sit amet"
+    },
+    "step3": {
+      "title": "开始新内容",
+      "description": "Lorem ipsum dolor sit amet, elit ut aliquam, purus sit lorem ipsum dolor sit amet"
+    }
+  },
+  "FAQ": {
+    "title": "常见问题",
+    "description": "查找有关 Nextify 的常见问题的答案"
+  },
+  "Testimonial": {
+    "title": "用户评价",
+    "description": "听听使用 Nextify 的开发者怎么说"
+  },
+  "Newsletter": {
+    "title": "订阅我们的通讯",
+    "description": "及时了解 Nextify 的相关信息",
+    "placeholder": "输入您的电子邮箱",
+    "submit": "提交"
+  },
+  "Footer": {
+    "description": "Phasellus a nulla in neque lacinia posuere. Etiam auctor facilisis augue vel gravida.",
+    "solution": {
+      "title": "解决方案",
+      "marketing": "营销",
+      "analytics": "分析",
+      "commerce": "商务",
+      "insights": "洞察"
+    },
+    "copyright": "© 版权所有 2021。保留所有权利。",
+    "terms": "服务条款",
+    "license": "许可证",
+    "privacy": "隐私政策"
+  }
+} 

@@ -1,17 +1,9 @@
-import { source, blog, pageLists } from '@/lib/source';
-import { createTokenizer } from '@oama/tokenizers/mandarin';
+import { createTokenizer } from '@orama/tokenizers/mandarin';
 import { createFromSource } from 'fumadocs-core/search/server';
 
-// 将所有数据源合并成一个
-const combinedSource = {
-  getPages: () => [
-    ...source.getPages(),
-    ...blog.getPages(),
-    ...pageLists.getPages()
-  ]
-};
+import { source } from '@/lib/source';
 
-export const { GET } = createFromSource(combinedSource, undefined, {
+export const { GET } = createFromSource(source, undefined, {
   localeMap: {
     'zh-cn': {
       components: {
@@ -22,6 +14,7 @@ export const { GET } = createFromSource(combinedSource, undefined, {
         tolerance: 0,
       },
     },
+
     'zh-tw': {
       components: {
         tokenizer: createTokenizer(),
@@ -31,6 +24,8 @@ export const { GET } = createFromSource(combinedSource, undefined, {
         tolerance: 0,
       },
     },
+
+    // use the English tokenizer
     en: 'english',
   },
 });
