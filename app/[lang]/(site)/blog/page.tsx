@@ -1,6 +1,6 @@
 import Card from "@/components/Card/Card"
 import { blog } from '@/lib/source';
-import { baseOptions } from '@/app/layout.config';
+import { baseOptions } from '@/app/[lang]/layout.config';
 import { createMetadata } from "@/utils/metadata";
 import type { Metadata } from "next";
 import Link from "next/link";

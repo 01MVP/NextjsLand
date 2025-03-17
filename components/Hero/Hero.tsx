@@ -9,7 +9,7 @@ export function Hero() {
         </h1>
         <div className="flex items-center mt-5">
           <Link
-            href="/docs/get-started/introduction"
+            href="/docs"
             className="mr-6 rounded-md text-fd-primary-foreground bg-fd-primary border border-solid border-black  px-6 py-2 font-semibold lg:mr-8"
           >
             Get Started

@@ -6,13 +6,14 @@ import { Github, Facebook, Globe, Twitter } from 'lucide-react';
 // shared configuration for site (home layout)
 export const baseOptions: HomeLayout = {
   githubUrl: 'https://github.com/frontendweb3/Nextify',
+  i18n: true,
   nav: {
     title: (<Logo />),
     transparentMode: 'top'
   },
   links: [
     { url: "/", text: "Home" },
-    { url: "/docs/get-started/introduction", text: "Documatation" },
+    { url: "/docs", text: "Documatation" },
     { url: "/blog", text: "Blog" },
     { url: "/page/about", text: "About us" },
     { url: "/page/changelog", text: "Change log" },

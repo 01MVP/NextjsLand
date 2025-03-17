@@ -1,6 +1,6 @@
 import Link from "next/link";
 import FAQItem from "./FAQItem.client";
-import { baseOptions } from '@/app/layout.config';
+import { baseOptions } from '@/app/[lang]/layout.config';
 
 export function FAQ() {
   const { faqs } = baseOptions
