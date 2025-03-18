@@ -6,9 +6,7 @@ import { source } from '@/lib/source';
 export const { GET } = createFromSource(source, undefined, {
   localeMap: {
     'zh-cn': {
-      components: {
-        tokenizer: createTokenizer(),
-      },
+      tokenizer: createTokenizer(),
       search: {
         threshold: 500,
         tolerance: 0,
@@ -16,9 +14,7 @@ export const { GET } = createFromSource(source, undefined, {
     },
 
     'zh-tw': {
-      components: {
-        tokenizer: createTokenizer(),
-      },
+      tokenizer: createTokenizer(),
       search: {
         threshold: 500,
         tolerance: 0,
