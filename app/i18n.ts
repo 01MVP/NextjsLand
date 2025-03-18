@@ -1,4 +1,3 @@
-import { useTranslations } from 'next-intl';
 import { i18n } from '@/lib/i18n';
 
 // Export the locales and defaultLocale for use in other components
@@ -12,6 +11,9 @@ export const pathnames = {
   '/': '/',
   '/docs': '/docs',
   '/blog': '/blog',
+  '/blog/[slug]': '/blog/[slug]',
+  '/blog/tag/[tag]': '/blog/tag/[tag]',
+  '/page/[slug]': '/page/[slug]',
 };
 
 export const localePrefix = 'always'; // Default

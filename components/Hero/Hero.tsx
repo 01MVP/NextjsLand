@@ -2,10 +2,9 @@
 
 import { Link } from '@/app/i18n/navigation';
 import { useTranslations } from 'next-intl';
-import { useLocale } from 'next-intl';
+import { ExternalLink } from '@/components/Links/ExternalLink';
 
 export function Hero() {
-  const locale = useLocale();
   const t = useTranslations('Hero');
   
   return (
@@ -21,13 +20,12 @@ export function Hero() {
           >
             {t('getStarted')}
           </Link>
-          <Link
-            target="_blank"
+          <ExternalLink
             href="https://github.com/frontendweb3/Nextify"
             className="flex items-center justify-center rounded-md border border-solid bg-fd-second text-fd-primary px-6 py-2 font-bold"
           >
             {t('github')}
-          </Link>
+          </ExternalLink>
         </div>
       </div>
     </header>

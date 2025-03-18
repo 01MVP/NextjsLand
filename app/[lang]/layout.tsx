@@ -71,7 +71,7 @@ export default async function RootLayout({
   let messages: Record<string, Record<string, string>>;
   try {
     messages = (await import(`../../messages/${lang}/index.json`)).default;
-  } catch (error) {
+  } catch {
     notFound();
   }
   

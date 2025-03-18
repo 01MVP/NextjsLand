@@ -3,10 +3,8 @@
 import React from 'react'
 import { WorkCard } from "./work-card";
 import { useTranslations } from 'next-intl';
-import { useLocale } from 'next-intl';
 
 export function Work() {
-  const locale = useLocale();
   const t = useTranslations('Work');
   
   const lists = [

@@ -16,7 +16,7 @@ export function BlogNav() {
     <div className="my-10 md:my-20 flex flex-col md:flex-row justify-center gap-3">
       {categories.map(category => (
         <Link 
-          href={category.url} 
+          href={{ pathname: '/blog', query: { tag: category.url.split('/').pop() } }}
           key={category.url} 
           className="px-4 py-2 bg-fd-primary text-fd-primary-foreground font-semibold rounded-full"
         >

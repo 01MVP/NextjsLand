@@ -3,14 +3,13 @@
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import type { ReactNode } from 'react';
 import { useNavigation } from '../Providers/NavigationProvider';
-import type { PageTree } from 'fumadocs-core/source';
 
 export function DocsLayoutWithI18n({ 
   children, 
   tree 
 }: { 
   children: ReactNode;
-  tree: PageTree; 
+  tree: any;  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 }) {
   const layoutOptions = useNavigation();
   

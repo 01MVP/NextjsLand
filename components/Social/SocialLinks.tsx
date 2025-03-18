@@ -24,7 +24,7 @@ export function SocialLinks() {
       {socialData.map(link => (
         <Link
           key={link.name}
-          href={link.url}
+          href={link.url as any}
           className="flex items-center justify-center"
         >
           {getSocialIcon(link.name)}

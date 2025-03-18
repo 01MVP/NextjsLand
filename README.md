@@ -13,6 +13,7 @@ Compared to the official fumadocs template, this project adds the following feat
    - Full multilingual support, including Chinese interface
    - Optimized Chinese search functionality
    - Language switching for documentation content
+   - Next-Intl i18n Support
 
 2. **Landing Page Example**
    - Responsive landing page design
@@ -31,6 +32,7 @@ Compared to the official fumadocs template, this project adds the following feat
    - 完整的多语言支持，包括中文界面
    - 中文搜索功能优化
    - 文档内容的语言切换
+   - Next-Intl i18n 支持
 
 2. **示例首页**
    - 响应式设计的落地页
@@ -40,9 +42,3 @@ Compared to the official fumadocs template, this project adds the following feat
    - 博客 (Blog) 示例
    - 更新日志 (Changelog) 示例
    - 可扩展的文档结构
-
-### Todo
-
-- [ ] Integrate next-intl according to fumadocs documentation
-      (Fumadocs is not a full-powered i18n library, it manages only its own components and utilities.
-      You can use other libraries like next-intl for the rest of your app. Read the Next.js Docs to learn more about implementing I18n in Next.js.)

@@ -2,9 +2,9 @@
 
 import { Logo } from '@/components/Logo/Logo';
 import { Newsletter } from "@/components/Newsletter/Newsletter"
-import { Link } from '@/app/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import { Github, Facebook, Globe } from 'lucide-react';
+import { ExternalLink } from '@/components/Links/ExternalLink';
 
 export function Footer() {
   const t = useTranslations('Footer');
@@ -42,14 +42,15 @@ export function Footer() {
             </div>
             <div className="mt-12 grid w-full max-w-52 grid-flow-col grid-cols-3 mx-auto gap-3 mb-8 md:mb-0">
               {
-                socialData?.map(link => <Link
-                  key={link.name}
-                  href={link.url}
-                  className="mx-auto flex max-w-6 flex-col items-center justify-center text-fd-foreground"
-                >
-                  {getSocialIcon(link.name)}
-                </Link>
-                )
+                socialData?.map(link => (
+                  <ExternalLink
+                    key={link.name}
+                    href={link.url}
+                    className="mx-auto flex max-w-6 flex-col items-center justify-center text-fd-foreground"
+                  >
+                    {getSocialIcon(link.name)}
+                  </ExternalLink>
+                ))
               }
             </div>
           </div>
@@ -58,123 +59,123 @@ export function Footer() {
             <div className="mb-4">
               <p className="font-bold uppercase">{t('solution.title')}</p>
             </div>
-            <Link
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('solution.marketing')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('solution.analytics')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('solution.commerce')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('solution.insights')}
-            </Link>
+            </ExternalLink>
           </div>
           <div className="flex flex-col items-start font-semibold">
             <div className="mb-4">
               <p className="font-bold uppercase">{t('support.title')}</p>
             </div>
-            <Link
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('support.pricing')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('support.documentation')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
               className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('support.guides')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('support.apiStatus')}
-            </Link>
+            </ExternalLink>
           </div>
           <div className="flex flex-col items-start font-semibold">
             <div className="mb-4">
               <p className="font-bold uppercase">{t('docs.title')}</p>
             </div>
-            <Link
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('docs.pricing')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('docs.apiGuide')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('docs.apiStatus')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('docs.devGuide')}
-            </Link>
+            </ExternalLink>
           </div>
           <div className="flex flex-col items-start font-semibold">
             <div className="mb-4">
               <p className="font-bold uppercase">{t('company.title')}</p>
             </div>
-            <Link
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('company.about')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('company.blog')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('company.jobs')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('company.press')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className="py-2 text-sm font-normal  transition hover:text-blue-600"
+              className="py-2 text-sm font-normal transition hover:text-blue-600"
             >
               {t('company.partners')}
-            </Link>
+            </ExternalLink>
           </div>
         </div>
         {/* Divider */}
@@ -182,28 +183,29 @@ export function Footer() {
         <Newsletter />
         {/* Divider */}
         <div className="mb-14 mt-16 w-full border-b border-border" />
-        <div className="flex gap-12 justify-between flex-col md:flex-row  md:items-center">
+        <div className="flex gap-12 justify-between flex-col md:flex-row md:items-center">
           <p className="text-sm text-center sm:text-base">
             {t('copyright')}
           </p>
           <div className="text-center font-semibold">
-            <Link
+            <ExternalLink
               href="#"
-              className=" py-2  font-normal transition hover:text-blue-600 px-2.5 ">
+              className="py-2 font-normal transition hover:text-blue-600 px-2.5"
+            >
               {t('terms')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className=" py-2 font-normal transition hover:text-blue-600 px-2.5 "
+              className="py-2 font-normal transition hover:text-blue-600 px-2.5"
             >
               {t('license')}
-            </Link>
-            <Link
+            </ExternalLink>
+            <ExternalLink
               href="#"
-              className=" py-2  font-normal transition hover:text-blue-600 px-2.5 "
+              className="py-2 font-normal transition hover:text-blue-600 px-2.5"
             >
               {t('privacy')}
-            </Link>
+            </ExternalLink>
           </div>
         </div>
       </div>

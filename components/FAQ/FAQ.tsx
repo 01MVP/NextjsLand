@@ -1,8 +1,8 @@
 'use client';
 
-import { Link } from '@/app/i18n/navigation';
 import FAQItem from "./FAQItem.client";
 import { useTranslations } from 'next-intl';
+import { ExternalLink } from '@/components/Links/ExternalLink';
 
 export function FAQ() {
   const t = useTranslations('FAQ');
@@ -35,10 +35,10 @@ export function FAQ() {
         </div>
         <p className="font-inter mx-auto mt-12 text-base  text-center">
           {t('support')}
-          <Link href="#" className=" font-bold">
+          <ExternalLink href="#" className="font-bold">
             {" "}
             {t('supportLink')}
-          </Link>
+          </ExternalLink>
         </p>
       </div>
     </section>

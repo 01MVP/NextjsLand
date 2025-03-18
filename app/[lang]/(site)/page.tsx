@@ -3,7 +3,6 @@ import { Work } from '@/components/Work/Work';
 import { FAQ } from '@/components/FAQ/FAQ';
 import { Testimonial } from '@/components/Testimonial/Testimonial';
 import { baseUrl, createMetadata } from "@/utils/metadata";
-import { getTranslations } from 'next-intl/server';
 import { setRequestLocale } from 'next-intl/server';
 import { locales } from '@/app/i18n';
 
@@ -24,8 +23,6 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
   
   // Enable static rendering
   setRequestLocale(resolvedParams.lang);
-  
-  const t = await getTranslations();
   
   return (
     <>
