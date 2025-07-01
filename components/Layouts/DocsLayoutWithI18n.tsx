@@ -11,10 +11,10 @@ export function DocsLayoutWithI18n({
   children: ReactNode;
   tree: any;  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 }) {
-  const layoutOptions = useNavigation();
+  const navigationConfig = useNavigation();
   
   return (
-    <DocsLayout tree={tree} {...layoutOptions}>
+    <DocsLayout tree={tree} {...navigationConfig}>
       {children}
     </DocsLayout>
   );

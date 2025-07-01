@@ -3,8 +3,8 @@
 import { Logo } from '@/components/Logo/Logo';
 import { Newsletter } from "@/components/Newsletter/Newsletter"
 import { useTranslations } from 'next-intl';
-import { Github, Facebook, Globe } from 'lucide-react';
 import { ExternalLink } from '@/components/Links/ExternalLink';
+import { SocialIcon } from '@/components/Social/SocialIcons';
 
 export function Footer() {
   const t = useTranslations('Footer');
@@ -12,20 +12,6 @@ export function Footer() {
     name: string;
     url: string;
   }>;
-
-  // Map social icons based on name
-  const getSocialIcon = (name: string) => {
-    switch (name) {
-      case 'Github':
-        return <Github />;
-      case 'Facebook':
-        return <Facebook />;
-      case 'Website':
-        return <Globe />;
-      default:
-        return <Globe />;
-    }
-  };
 
   return (
     <footer className="block">
@@ -48,7 +34,7 @@ export function Footer() {
                     href={link.url}
                     className="mx-auto flex max-w-6 flex-col items-center justify-center text-fd-foreground"
                   >
-                    {getSocialIcon(link.name)}
+                    <SocialIcon name={link.name} />
                   </ExternalLink>
                 ))
               }
