@@ -8,16 +8,16 @@ export const { GET } = createFromSource(source, undefined, {
     'zh-cn': {
       tokenizer: createTokenizer(),
       search: {
-        threshold: 500,
-        tolerance: 0,
+        threshold: 1,
+        tolerance: 1,
       },
     },
 
     'zh-tw': {
       tokenizer: createTokenizer(),
       search: {
-        threshold: 500,
-        tolerance: 0,
+        threshold: 1,
+        tolerance: 1,
       },
     },
 
