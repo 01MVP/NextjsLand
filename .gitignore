@@ -1,4 +1,5 @@
 # deps
+.history/
 .vscode/
 /node_modules
 

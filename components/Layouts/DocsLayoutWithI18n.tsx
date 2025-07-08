@@ -2,7 +2,7 @@
 
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import type { ReactNode } from 'react';
-import { useNavigation } from '../Providers/NavigationProvider';
+import { useBaseOptions } from '@/app/[locale]/layout.config';
 
 export function DocsLayoutWithI18n({ 
   children, 
@@ -11,11 +11,11 @@ export function DocsLayoutWithI18n({
   children: ReactNode;
   tree: any;  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 }) {
-  const navigationConfig = useNavigation();
+  const baseOptions = useBaseOptions();
   
   return (
-    <DocsLayout tree={tree} {...navigationConfig}>
+    <DocsLayout tree={tree} {...baseOptions} i18n>
       {children}
     </DocsLayout>
   );
-} 
+}

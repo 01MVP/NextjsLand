@@ -6,19 +6,19 @@ export default getRequestConfig(async ({ locale }) => {
   if (!locale || typeof locale !== 'string' || !locales.includes(locale)) {
     return {
       locale: defaultLocale,
-      messages: (await import(`../../messages/${defaultLocale}/index.json`)).default
+      messages: (await import(`../../locales/${defaultLocale}/index.json`)).default
     };
   }
 
   try {
     return {
       locale,
-      messages: (await import(`../../messages/${locale}/index.json`)).default
+      messages: (await import(`../../locales/${locale}/index.json`)).default
     };
   } catch {
     return {
       locale: defaultLocale,
-      messages: (await import(`../../messages/${defaultLocale}/index.json`)).default
+      messages: (await import(`../../locales/${defaultLocale}/index.json`)).default
     };
   }
-}); 
+});

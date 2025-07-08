@@ -47,7 +47,7 @@ const translationsMap: TranslationsMap = {
 
 // Generate static params for all supported locales
 export function generateStaticParams() {
-  return locales.map((lang) => ({ lang }));
+  return locales.map((locale) => ({ locale }));
 }
 
 export default async function RootLayout({
@@ -55,30 +55,30 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ lang: string }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { lang } = await params;
+  const { locale } = await params;
   
   // Validate that the incoming locale is valid
-  if (!locales.includes(lang)) {
+  if (!locales.includes(locale)) {
     notFound();
   }
   
   // Enable static rendering
-  setRequestLocale(lang);
+  setRequestLocale(locale);
   
   // Load translations
   let messages: Record<string, Record<string, string>>;
   try {
-    messages = (await import(`../../messages/${lang}/index.json`)).default;
+    messages = (await import(`../../locales/${locale}/index.json`)).default;
   } catch {
     notFound();
   }
   
-  const translations = translationsMap[lang as keyof TranslationsMap];
+  const translations = translationsMap[locale as keyof TranslationsMap];
 
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <meta httpEquiv="Cache-Control" content="no-store, must-revalidate" />
         <meta httpEquiv="Pragma" content="no-cache" />
@@ -86,13 +86,13 @@ export default async function RootLayout({
       </head>
       <body>
         <NextIntlClientProvider 
-          locale={lang} 
+          locale={locale} 
           messages={messages}
           timeZone="UTC"
           now={new Date()}
         >
           <I18nProvider
-            locale={lang}
+            locale={locale}
             locales={localeMappings}
             translations={translations}
           >

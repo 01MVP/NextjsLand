@@ -2,10 +2,10 @@
 
 import { HomeLayout } from 'fumadocs-ui/layouts/home';
 import type { ReactNode } from 'react';
-import { useNavigation } from '../Providers/NavigationProvider';
+import { useBaseOptions } from '@/app/[locale]/layout.config';
 
 export function HomeLayoutWithI18n({ children }: { children: ReactNode }) {
-  const navigationConfig = useNavigation();
+  const baseOptions = useBaseOptions();
   
-  return <HomeLayout {...navigationConfig}>{children}</HomeLayout>;
-} 
+  return <HomeLayout {...baseOptions} i18n>{children}</HomeLayout>;
+}
