@@ -1,10 +1,10 @@
 "use client";
 
-import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import type { ReactNode } from 'react';
+import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import { useBaseOptions } from '@/app/[locale]/layout.config';
 
-export function DocsLayoutWithI18n({ 
+export function DocsLayoutClient({ 
   children, 
   tree 
 }: { 

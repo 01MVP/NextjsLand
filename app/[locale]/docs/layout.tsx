@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { source } from '@/lib/source';
-import { DocsLayoutWithI18n } from '@/components/Layouts/DocsLayoutWithI18n';
+import { DocsLayoutClient } from './docs-layout-client';
 
 export default async function Layout({
   params,
@@ -12,9 +12,9 @@ export default async function Layout({
   const locale = (await params).locale;
 
   return (
-    <DocsLayoutWithI18n tree={source.pageTree[locale]}>
+    <DocsLayoutClient tree={source.pageTree[locale]}>
       {children}
-    </DocsLayoutWithI18n>
+    </DocsLayoutClient>
   );
 }
 

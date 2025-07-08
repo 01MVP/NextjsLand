@@ -1,7 +1,6 @@
 'use client';
 
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Twitter } from 'lucide-react';
 import { Logo } from '@/components/Logo/Logo';
