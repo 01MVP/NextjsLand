@@ -8,7 +8,7 @@ export function createMetadata(override: Metadata): Metadata {
       description: override.description ?? undefined,
       url: 'https://fumadocs.vercel.app',
       images: '/banner.png',
-      siteName: 'Nextify',
+      siteName: 'NextjsLand',
       ...override.openGraph,
     },
     twitter: {

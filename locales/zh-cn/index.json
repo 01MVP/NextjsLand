@@ -1,15 +1,15 @@
 {
   "Hero": {
-    "title": "使用 Nextify 轻松创建您理想的文档网站",
+    "title": "使用 NextjsLand 轻松创建您理想的文档网站",
     "getStarted": "开始使用",
     "github": "GitHub"
   },
   "Work": {
     "title": "工作原理",
-    "description": "了解 Nextify 如何简化文档创建",
+    "description": "了解 NextjsLand 如何简化文档创建",
     "steps": "3个简单步骤",
     "step1": {
-      "title": "克隆 Nextify 模板",
+      "title": "克隆 NextjsLand 模板",
       "description": "Lorem ipsum dolor sit amet, elit ut aliquam, purus sit lorem ipsum dolor sit amet"
     },
     "step2": {
@@ -23,7 +23,7 @@
   },
   "FAQ": {
     "title": "常见问题",
-    "description": "查找有关 Nextify 的常见问题的答案",
+    "description": "查找有关 NextjsLand 的常见问题的答案",
     "questions": [
       {
         "key": 1,
@@ -51,11 +51,11 @@
   },
   "Testimonial": {
     "title": "用户评价",
-    "description": "听听使用 Nextify 的开发者怎么说"
+    "description": "听听使用 NextjsLand 的开发者怎么说"
   },
   "Newsletter": {
     "title": "订阅我们的通讯",
-    "description": "及时了解 Nextify 的相关信息",
+    "description": "及时了解 NextjsLand 的相关信息",
     "placeholder": "输入您的电子邮箱",
     "submit": "提交"
   },
@@ -121,4 +121,4 @@
     "photography": "摄影",
     "programming": "编程"
   }
-} 
+}

@@ -11,10 +11,10 @@ import defaultMdxComponents from 'fumadocs-ui/mdx';
 export default async function Page({
   params,
 }: {
-  params: Promise<{ lang: string; slug?: string[] }>;
+  params: Promise<{ locale: string; slug?: string[] }>;
 }) {
-  const { slug, lang } = await params;
-  const page = source.getPage(slug, lang);
+  const { slug, locale } = await params;
+  const page = source.getPage(slug, locale);
   if (!page) notFound();
 
   const MDX = page.data.body;
@@ -37,10 +37,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: string; slug?: string[] }>;
+  params: Promise<{ locale: string; slug?: string[] }>;
 }) {
-  const { slug, lang } = await params;
-  const page = source.getPage(slug, lang);
+  const { slug, locale } = await params;
+  const page = source.getPage(slug, locale);
   if (!page) notFound();
 
   return {

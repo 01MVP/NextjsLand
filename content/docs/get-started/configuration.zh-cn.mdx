@@ -1,0 +1,291 @@
+---
+title: 配置说明
+description: 学习如何配置 NextjsLand模板的各项设置
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+本页面将详细介绍如何配置模板的各项功能。
+
+## 国际化配置
+
+### 语言设置
+
+在 `lib/i18n.ts` 文件中配置支持的语言：
+
+```typescript title="lib/i18n.ts"
+import type { I18nConfig } from 'fumadocs-core/i18n';
+
+export const i18n: I18nConfig = {
+  defaultLanguage: 'en',
+  languages: ['en', 'zh-cn', 'zh-tw'],
+};
+```
+
+### 路由配置
+
+在 `app/i18n/routing.ts` 中配置路由规则：
+
+```typescript title="app/i18n/routing.ts"
+import { defineRouting } from 'next-intl/routing';
+
+export const routing = defineRouting({
+  // 支持的所有语言列表
+  locales: ['en', 'zh-cn', 'zh-tw'],
+  
+  // 默认语言
+  defaultLocale: 'en',
+  
+  // 始终使用语言前缀
+  localePrefix: 'always',
+});
+```
+
+### 翻译文件
+
+在 `locales/` 目录下为每种语言创建翻译文件：
+
+<Tabs items={['zh-cn', 'zh-tw', 'en']}>
+
+```json tab="zh-cn" title="locales/zh-cn/index.json"
+{
+  "Hero": {
+    "title": "构建现代化文档网站",
+    "description": "使用 Fumadocs 创建美观、快速的文档"
+  },
+  "Navigation": {
+    "docs": "文档",
+    "blog": "博客",
+    "about": "关于"
+  }
+}
+```
+
+```json tab="zh-tw" title="locales/zh-tw/index.json"
+{
+  "Hero": {
+    "title": "構建現代化文檔網站",
+    "description": "使用 Fumadocs 創建美觀、快速的文檔"
+  },
+  "Navigation": {
+    "docs": "文檔",
+    "blog": "博客",
+    "about": "關於"
+  }
+}
+```
+
+```json tab="en" title="locales/en/index.json"
+{
+  "Hero": {
+    "title": "Build Modern Documentation",
+    "description": "Create beautiful, fast docs with Fumadocs"
+  },
+  "Navigation": {
+    "docs": "Docs",
+    "blog": "Blog",
+    "about": "About"
+  }
+}
+```
+
+</Tabs>
+
+## Fumadocs 配置
+
+### 基础配置
+
+在 `source.config.ts` 中配置文档源：
+
+```typescript title="source.config.ts"
+import { defineDocs, defineConfig } from 'fumadocs-mdx/config';
+import { i18n } from './lib/i18n';
+
+export const { docs, meta } = defineDocs({
+  dir: 'content/docs',
+  docs: {
+    schema: {
+      frontmatter: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        icon: z.string().optional(),
+      }),
+    },
+  },
+});
+
+export default defineConfig({
+  i18n,
+  lastModifiedTime: 'git',
+});
+```
+
+### 搜索配置
+
+搜索功能在 `app/api/search/route.ts` 中配置：
+
+```typescript title="app/api/search/route.ts"
+import { createSearchAPI } from 'fumadocs-core/search/server';
+import { docs } from '@/source.config';
+
+export const { GET } = createSearchAPI('advanced', {
+  indexes: docs.getPages().map((page) => ({
+    title: page.data.title,
+    structuredData: page.data.structuredData,
+    id: page.url,
+    url: page.url,
+  })),
+});
+```
+
+## 主题配置
+
+### 颜色主题
+
+在 `tailwind.config.js` 中自定义颜色：
+
+```javascript title="tailwind.config.js"
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#eff6ff',
+          500: '#3b82f6',
+          900: '#1e3a8a',
+        },
+      },
+    },
+  },
+};
+```
+
+### 布局配置
+
+在 `app/[locale]/layout.config.tsx` 中配置布局：
+
+```tsx title="app/[locale]/layout.config.tsx"
+import type { BaseLayoutProps } from 'fumadocs-ui/layout';
+
+export const baseOptions: BaseLayoutProps = {
+  nav: {
+    title: 'Fumadocs',
+  },
+  links: [
+    {
+      text: 'Documentation',
+      url: '/docs',
+      active: 'nested-url',
+    },
+  ],
+};
+```
+
+## 内容配置
+
+### 页面元数据
+
+使用 `meta.json` 文件配置页面结构：
+
+```json title="content/docs/meta.json"
+{
+  "root": true,
+  "defaultOpen": true,
+  "pages": [
+    "index",
+    "get-started",
+    "components",
+    "deployment"
+  ]
+}
+```
+
+### MDX 组件
+
+在文档中使用自定义组件：
+
+```mdx title="content/docs/example.mdx"
+---
+title: 示例页面
+description: 这是一个示例页面
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+# 示例页面
+
+<Callout type="info">
+这是一个信息提示框。
+</Callout>
+```
+
+## 部署配置
+
+### Vercel 部署
+
+创建 `vercel.json` 配置文件：
+
+```json title="vercel.json"
+{
+  "buildCommand": "pnpm build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "rewrites": [
+    {
+      "source": "/((?!api|_next|_static|favicon.ico).*)",
+      "destination": "/"
+    }
+  ]
+}
+```
+
+### 环境变量
+
+在 `.env.local` 中配置环境变量：
+
+```bash title=".env.local"
+# 网站基础 URL
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+
+# 分析工具（可选）
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
+
+<Callout type="warning">
+不要将敏感信息提交到版本控制系统中。使用 `.env.local` 存储本地配置，使用部署平台的环境变量功能存储生产配置。
+</Callout>
+
+## 性能优化
+
+### 图片优化
+
+在 `next.config.mjs` 中配置图片优化：
+
+```javascript title="next.config.mjs"
+const nextConfig = {
+  images: {
+    domains: ['example.com'],
+    formats: ['image/webp', 'image/avif'],
+  },
+};
+```
+
+### 构建优化
+
+```javascript title="next.config.mjs"
+const nextConfig = {
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['fumadocs-ui'],
+  },
+};
+```
+
+## 下一步
+
+配置完成后，您可以：
+
+- 开始 [自定义内容](/docs/get-started/customization)
+- 了解 [组件使用](/docs/components)
+- 准备 [部署上线](/docs/get-started/deployment)

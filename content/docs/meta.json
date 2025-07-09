@@ -3,14 +3,9 @@
   "defaultOpen": true,
 	"pages": [
 		"index",
-		"test",
 		"get-started",
-    "components",
-    "plugins",
-    "testing",
-    "deployments",
-		"troubleshooting",
-    "community",
+		"features",
+		"components",
     "..."
   ]
 }

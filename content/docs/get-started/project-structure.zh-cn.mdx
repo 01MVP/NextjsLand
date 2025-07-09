@@ -1,0 +1,213 @@
+---
+title: 项目结构
+description: 了解 NextjsLand模板的项目结构和文件组织
+---
+
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+
+本页面将详细介绍项目的目录结构和各个文件的作用。
+
+## 项目概览
+
+<Files>
+  <Folder name="app" defaultOpen>
+    <Folder name="[locale]">
+      <Folder name="(site)">
+        <File name="page.tsx" />
+        <File name="layout.tsx" />
+      </Folder>
+      <Folder name="docs">
+        <File name="[[...slug]]/page.tsx" />
+        <File name="layout.tsx" />
+      </Folder>
+      <File name="layout.tsx" />
+    </Folder>
+    <Folder name="api">
+      <Folder name="search">
+        <File name="route.ts" />
+      </Folder>
+    </Folder>
+    <Folder name="i18n">
+      <File name="navigation.ts" />
+      <File name="request.ts" />
+      <File name="routing.ts" />
+    </Folder>
+    <File name="i18n.ts" />
+  </Folder>
+  <Folder name="components">
+    <File name="..." />
+  </Folder>
+  <Folder name="content" defaultOpen>
+    <Folder name="docs" defaultOpen>
+      <File name="index.zh-cn.mdx" />
+      <File name="index.zh-tw.mdx" />
+      <File name="meta.json" />
+      <Folder name="get-started">
+        <File name="index.zh-cn.mdx" />
+        <File name="installation.zh-cn.mdx" />
+        <File name="meta.json" />
+      </Folder>
+    </Folder>
+    <Folder name="blog">
+      <File name="example-blog.mdx" />
+      <File name="example-blog.zh-cn.mdx" />
+      <File name="example-blog.zh-tw.mdx" />
+      <File name="7-useful-tips-from-python-experts-in-programming.md" />
+    </Folder>
+    <Folder name="pages">
+      <File name="about.mdx" />
+      <File name="changelog.mdx" />
+      <File name="license.mdx" />
+      <File name="privacy-policy.mdx" />
+      <File name="terms-of-service.mdx" />
+    </Folder>
+  </Folder>
+  <Folder name="locales">
+    <Folder name="en">
+      <File name="index.json" />
+    </Folder>
+    <Folder name="zh-cn">
+      <File name="index.json" />
+    </Folder>
+    <Folder name="zh-tw">
+      <File name="index.json" />
+    </Folder>
+  </Folder>
+  <File name="next.config.mjs" />
+  <File name="source.config.ts" />
+  <File name="middleware.ts" />
+</Files>
+
+## 核心目录说明
+
+### `app/` 目录
+
+这是 Next.js 13+ 的 App Router 目录，包含了应用的路由和布局：
+
+- **`[locale]/`**: 动态路由，处理不同语言的页面
+- **`(site)/`**: 网站主页和其他静态页面
+- **`docs/`**: 文档页面的路由处理
+- **`i18n/`**: 国际化相关的配置和工具函数
+- **`api/`**: API 路由，包括搜索功能
+
+### `content/` 目录
+
+存放所有的内容文件：
+
+- **`docs/`**: 文档内容，支持多语言文件
+- **`blog/`**: 博客文章，支持多语言和标签分类
+- **`pages/`**: 静态页面内容，如关于页面、隐私政策等
+
+#### `blog/` 目录详解
+
+博客目录用于存放博客文章，支持以下功能：
+
+- **多语言支持**: 使用 `.zh-cn.mdx`、`.zh-tw.mdx` 等后缀
+- **标签系统**: 在 frontmatter 中使用 `tags` 字段
+- **分类功能**: 支持按分类组织文章
+- **SEO 优化**: 自动生成 meta 标签和结构化数据
+
+示例文件结构：
+```
+blog/
+├── example-blog.mdx          # 英文博客
+├── example-blog.zh-cn.mdx    # 中文博客
+├── example-blog.zh-tw.mdx    # 繁体中文博客
+└── tech-tips.zh-cn.mdx       # 技术分享文章
+```
+
+#### `pages/` 目录详解
+
+页面目录用于存放静态页面内容：
+
+- **法律页面**: 隐私政策、服务条款、许可证等
+- **公司信息**: 关于我们、联系方式等
+- **更新日志**: 产品更新和变更记录
+- **自定义页面**: 任何其他静态内容页面
+
+示例文件结构：
+```
+pages/
+├── about.mdx              # 关于页面
+├── privacy-policy.mdx     # 隐私政策
+├── terms-of-service.mdx   # 服务条款
+├── license.mdx            # 许可证信息
+└── changelog.mdx          # 更新日志
+```
+
+### `components/` 目录
+
+可复用的 React 组件：
+
+- **`Hero/`**: 首页英雄区域组件
+- **`Navigation/`**: 导航组件
+- **`Footer/`**: 页脚组件
+- **`FAQ/`**: 常见问题组件
+- 其他业务组件...
+
+### `locales/` 目录
+
+国际化翻译文件：
+
+- **`en/`**: 英文翻译
+- **`zh-cn/`**: 简体中文翻译
+- **`zh-tw/`**: 繁体中文翻译
+
+## 重要配置文件
+
+### `next.config.mjs`
+
+Next.js 的主要配置文件，包含：
+
+- 国际化配置
+- MDX 处理配置
+- 构建优化设置
+
+### `source.config.ts`
+
+Fumadocs 的配置文件，定义：
+
+- 文档源的配置
+- 搜索功能设置
+- 页面生成规则
+
+### `middleware.ts`
+
+处理国际化路由的中间件，负责：
+
+- 语言检测和重定向
+- 路径本地化
+- Cookie 和 Header 处理
+
+## 文件命名规范
+
+### 多语言文件
+
+文档文件使用语言后缀命名：
+
+- `filename.zh-cn.mdx` - 简体中文
+- `filename.zh-tw.mdx` - 繁体中文
+- `filename.mdx` - 默认语言（英文）
+
+### 元数据文件
+
+每个目录可以包含 `meta.json` 文件来定义：
+
+- 页面顺序
+- 导航结构
+- 页面标题和描述
+
+## 内容组织建议
+
+1. **按功能分组**: 将相关的文档放在同一个目录下
+2. **保持一致性**: 确保所有语言版本的文件结构一致
+3. **使用描述性名称**: 文件和目录名应该清楚地表达其内容
+4. **合理的层级**: 避免过深的目录嵌套
+
+## 下一步
+
+了解项目结构后，您可以：
+
+- 学习 [配置说明](/docs/get-started/configuration)
+- 开始 [自定义内容](/docs/get-started/customization)
+- 了解 [部署流程](/docs/get-started/deployment)

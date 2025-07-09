@@ -1,0 +1,214 @@
+---
+title: Project Structure
+description: Understand the project structure and file organization of the Fumadocs internationalization template
+---
+
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+
+This page will detail the directory structure and the purpose of each file in the project.
+
+## Project Overview
+
+<Files>
+  <Folder name="app" defaultOpen>
+    <Folder name="[locale]">
+      <Folder name="(site)">
+        <File name="page.tsx" />
+        <File name="layout.tsx" />
+      </Folder>
+      <Folder name="docs">
+        <File name="[[...slug]]/page.tsx" />
+        <File name="layout.tsx" />
+      </Folder>
+      <File name="layout.tsx" />
+    </Folder>
+    <Folder name="api">
+      <Folder name="search">
+        <File name="route.ts" />
+      </Folder>
+    </Folder>
+    <Folder name="i18n">
+      <File name="navigation.ts" />
+      <File name="request.ts" />
+      <File name="routing.ts" />
+    </Folder>
+    <File name="i18n.ts" />
+  </Folder>
+  <Folder name="components">
+    <File name="..." />
+  </Folder>
+  <Folder name="content" defaultOpen>
+    <Folder name="docs" defaultOpen>
+      <File name="index.mdx" />
+      <File name="index.zh-cn.mdx" />
+      <File name="index.zh-tw.mdx" />
+      <File name="meta.json" />
+      <Folder name="get-started">
+        <File name="index.mdx" />
+        <File name="installation.mdx" />
+        <File name="meta.json" />
+      </Folder>
+    </Folder>
+    <Folder name="blog">
+      <File name="example-blog.mdx" />
+      <File name="example-blog.zh-cn.mdx" />
+      <File name="example-blog.zh-tw.mdx" />
+      <File name="7-useful-tips-from-python-experts-in-programming.md" />
+    </Folder>
+    <Folder name="pages">
+      <File name="about.mdx" />
+      <File name="changelog.mdx" />
+      <File name="license.mdx" />
+      <File name="privacy-policy.mdx" />
+      <File name="terms-of-service.mdx" />
+    </Folder>
+  </Folder>
+  <Folder name="locales">
+    <Folder name="en">
+      <File name="index.json" />
+    </Folder>
+    <Folder name="zh-cn">
+      <File name="index.json" />
+    </Folder>
+    <Folder name="zh-tw">
+      <File name="index.json" />
+    </Folder>
+  </Folder>
+  <File name="next.config.mjs" />
+  <File name="source.config.ts" />
+  <File name="middleware.ts" />
+</Files>
+
+## Core Directory Explanation
+
+### `app/` Directory
+
+This is the Next.js 13+ App Router directory containing application routes and layouts:
+
+- **`[locale]/`**: Dynamic route handling different language pages
+- **`(site)/`**: Website homepage and other static pages
+- **`docs/`**: Documentation page route handling
+- **`i18n/`**: Internationalization related configurations and utility functions
+- **`api/`**: API routes including search functionality
+
+### `content/` Directory
+
+Stores all content files:
+
+- **`docs/`**: Documentation content with multi-language file support
+- **`blog/`**: Blog articles with multi-language and tag classification support
+- **`pages/`**: Static page content like about page, privacy policy, etc.
+
+#### `blog/` Directory Details
+
+The blog directory stores blog articles with the following features:
+
+- **Multi-language support**: Use suffixes like `.zh-cn.mdx`, `.zh-tw.mdx`
+- **Tag system**: Use `tags` field in frontmatter
+- **Category functionality**: Support organizing articles by categories
+- **SEO optimization**: Automatically generate meta tags and structured data
+
+Example file structure:
+```
+blog/
+├── example-blog.mdx          # English blog
+├── example-blog.zh-cn.mdx    # Chinese blog
+├── example-blog.zh-tw.mdx    # Traditional Chinese blog
+└── tech-tips.zh-cn.mdx       # Tech sharing article
+```
+
+#### `pages/` Directory Details
+
+The pages directory stores static page content:
+
+- **Legal pages**: Privacy policy, terms of service, license, etc.
+- **Company information**: About us, contact information, etc.
+- **Changelog**: Product updates and change records
+- **Custom pages**: Any other static content pages
+
+Example file structure:
+```
+pages/
+├── about.mdx              # About page
+├── privacy-policy.mdx     # Privacy policy
+├── terms-of-service.mdx   # Terms of service
+├── license.mdx            # License information
+└── changelog.mdx          # Changelog
+```
+
+### `components/` Directory
+
+Reusable React components:
+
+- **`Hero/`**: Homepage hero section component
+- **`Navigation/`**: Navigation component
+- **`Footer/`**: Footer component
+- **`FAQ/`**: Frequently asked questions component
+- Other business components...
+
+### `locales/` Directory
+
+Internationalization translation files:
+
+- **`en/`**: English translations
+- **`zh-cn/`**: Simplified Chinese translations
+- **`zh-tw/`**: Traditional Chinese translations
+
+## Important Configuration Files
+
+### `next.config.mjs`
+
+Next.js main configuration file containing:
+
+- Internationalization configuration
+- MDX processing configuration
+- Build optimization settings
+
+### `source.config.ts`
+
+Fumadocs configuration file defining:
+
+- Document source configuration
+- Search functionality settings
+- Page generation rules
+
+### `middleware.ts`
+
+Middleware handling internationalization routing, responsible for:
+
+- Language detection and redirection
+- Path localization
+- Cookie and Header processing
+
+## File Naming Conventions
+
+### Multi-language Files
+
+Document files use language suffixes:
+
+- `filename.zh-cn.mdx` - Simplified Chinese
+- `filename.zh-tw.mdx` - Traditional Chinese
+- `filename.mdx` - Default language (English)
+
+### Metadata Files
+
+Each directory can contain a `meta.json` file to define:
+
+- Page order
+- Navigation structure
+- Page titles and descriptions
+
+## Content Organization Recommendations
+
+1. **Group by functionality**: Place related documents in the same directory
+2. **Maintain consistency**: Ensure file structure consistency across all language versions
+3. **Use descriptive names**: File and directory names should clearly express their content
+4. **Reasonable hierarchy**: Avoid overly deep directory nesting
+
+## Next Steps
+
+After understanding the project structure, you can:
+
+- Learn [Configuration Guide](/docs/get-started/configuration)
+- Start [Customizing Content](/docs/get-started/customization)
+- Understand [Deployment Process](/docs/get-started/deployment)

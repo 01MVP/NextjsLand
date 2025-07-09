@@ -1,0 +1,369 @@
+---
+title: 组件使用指南
+description: 学习如何使用 Fumadocs 提供的各种组件
+index: true
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+
+Fumadocs 提供了丰富的组件库，帮助您创建美观且功能强大的文档页面。
+
+## 提示框组件 (Callout)
+
+提示框用于突出显示重要信息、警告或提示。
+
+### 基础用法
+
+<Callout type="info">
+这是一个信息提示框，用于显示一般性信息。
+</Callout>
+
+<Callout type="warning">
+这是一个警告提示框，用于显示需要注意的内容。
+</Callout>
+
+<Callout type="error">
+这是一个错误提示框，用于显示错误或危险信息。
+</Callout>
+
+### 代码示例
+
+```mdx
+import { Callout } from 'fumadocs-ui/components/callout';
+
+<Callout type="info">
+这是一个信息提示框。
+</Callout>
+
+<Callout type="warning">
+这是一个警告提示框。
+</Callout>
+
+<Callout type="error">
+这是一个错误提示框。
+</Callout>
+```
+
+### 自定义标题
+
+<Callout type="info" title="自定义标题">
+您可以为提示框添加自定义标题。
+</Callout>
+
+```mdx
+<Callout type="info" title="自定义标题">
+您可以为提示框添加自定义标题。
+</Callout>
+```
+
+## 标签页组件 (Tabs)
+
+标签页组件用于在同一区域显示不同的内容。
+
+### 基础用法
+
+<Tabs items={['JavaScript', 'TypeScript', 'Python']}>
+  <Tab value="JavaScript">
+  ```javascript
+  console.log('Hello, JavaScript!');
+  ```
+  </Tab>
+  <Tab value="TypeScript">
+    ```typescript
+    const message: string = 'Hello, TypeScript!';
+    console.log(message);
+    ```
+  </Tab>
+  <Tab value="Python">
+  ```python
+  print('Hello, Python!')
+  ```
+  </Tab>
+</Tabs>
+
+### 代码示例
+
+````mdx
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['JavaScript', 'TypeScript', 'Python']}>
+  <Tab value="JavaScript">
+  ```javascript
+  console.log('Hello, JavaScript!');
+  ```
+  </Tab>
+  <Tab value="TypeScript">
+    ```typescript
+    const message: string = 'Hello, TypeScript!';
+    console.log(message);
+    ```
+  </Tab>
+  <Tab value="Python">
+  ```python
+  print('Hello, Python!')
+  ```
+  </Tab>
+</Tabs>
+````
+
+### 持久化标签页
+
+使用 `groupId` 和 `persist` 属性可以在页面间保持标签页状态：
+
+````mdx
+<Tabs groupId='package-manager' persist items={['npm', 'pnpm', 'yarn']}>
+  标签页内容
+</Tabs>
+````
+
+## 步骤组件 (Steps)
+
+步骤组件用于显示分步骤的操作指南。
+
+### 基础用法
+
+<Steps>
+  <Step>
+    ### 第一步：安装依赖
+    
+    首先安装项目所需的依赖包。
+    
+    ```bash
+    npm install
+    ```
+  </Step>
+  
+  <Step>
+    ### 第二步：配置项目
+    
+    根据您的需求配置项目设置。
+    
+    ```javascript
+    // config.js
+    module.exports = {
+      // 配置选项
+    };
+    ```
+  </Step>
+  
+  <Step>
+    ### 第三步：启动项目
+    
+    运行开发服务器。
+    
+    ```bash
+    npm run dev
+    ```
+  </Step>
+</Steps>
+
+### 代码示例
+
+```mdx
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Steps>
+  <Step>
+    ### 第一步：安装依赖
+    
+    首先安装项目所需的依赖包。
+  </Step>
+  
+  <Step>
+    ### 第二步：配置项目
+    
+    根据您的需求配置项目设置。
+  </Step>
+  
+  <Step>
+    ### 第三步：启动项目
+    
+    运行开发服务器。
+  </Step>
+</Steps>
+```
+
+## 手风琴组件 (Accordion)
+
+手风琴组件用于创建可折叠的内容区域。
+
+### 基础用法
+
+<Accordions>
+  <Accordion title="什么是 Fumadocs？">
+    Fumadocs 是一个现代化的文档框架，基于 Next.js 构建，提供了丰富的功能和组件。
+  </Accordion>
+  
+  <Accordion title="如何安装 Fumadocs？">
+    您可以使用 npm、pnpm 或 yarn 来安装 Fumadocs：
+    
+    ```bash
+    npm install fumadocs-core fumadocs-ui
+    ```
+  </Accordion>
+  
+  <Accordion title="Fumadocs 支持哪些功能？">
+    Fumadocs 支持多语言、主题切换、全文搜索、MDX 等多种功能。
+  </Accordion>
+</Accordions>
+
+### 代码示例
+
+```mdx
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Accordions>
+  <Accordion title="问题标题">
+    这里是问题的答案内容。
+  </Accordion>
+  
+  <Accordion title="另一个问题">
+    这里是另一个问题的答案。
+  </Accordion>
+</Accordions>
+```
+
+## 卡片组件 (Cards)
+
+卡片组件用于展示链接或信息块。
+
+### 基础用法
+
+<Cards>
+  <Card title="快速开始" href="/docs/get-started" description="了解如何快速开始使用模板" />
+  <Card title="功能特性" href="/docs/features" description="探索模板提供的强大功能" />
+  <Card title="组件指南" href="/docs/components" description="学习如何使用各种组件" />
+  <Card title="部署指南" href="/docs/deployment" description="将您的网站部署到生产环境" />
+</Cards>
+
+### 代码示例
+
+```mdx
+<Cards>
+  <Card 
+    title="卡片标题" 
+    href="/link" 
+    description="卡片描述" 
+  />
+  <Card 
+    title="外部链接" 
+    href="https://example.com" 
+    description="这是一个外部链接" 
+  />
+</Cards>
+```
+
+## 文件树组件 (FileTree)
+
+文件树组件用于显示项目结构。
+
+### 基础用法
+
+```mdx
+import { Files } from 'fumadocs-ui/components/files';
+
+<Files>
+  <Folder name="src" defaultOpen>
+<Folder name="components">
+<File name="Button.tsx" />
+<File name="Card.tsx" />
+</Folder>
+<Folder name="pages">
+<File name="index.tsx" />
+<File name="about.tsx" />
+</Folder>
+<File name="app.tsx" />
+</Folder>
+<File name="package.json" />
+<File name="README.md" />
+</Files>
+```
+
+## 横幅组件 (Banner)
+
+横幅组件用于显示重要通知或公告。
+
+### 基础用法
+
+```mdx
+import { Banner } from 'fumadocs-ui/components/banner';
+
+<Banner>
+  这是一个重要通知，请注意查看。
+</Banner>
+```
+
+## 代码块增强
+
+### 带标题的代码块
+
+```javascript title="utils/helper.js"
+function formatDate(date) {
+  return date.toLocaleDateString('zh-CN');
+}
+
+export { formatDate };
+```
+
+### 行号高亮
+
+```javascript {2,4-6}
+function calculateSum(numbers) {
+  let sum = 0; // 这行会被高亮
+  
+  for (let i = 0; i < numbers.length; i++) { // 这些行会被高亮
+    sum += numbers[i];
+  } // 高亮结束
+  
+  return sum;
+}
+```
+
+### 代码差异显示
+
+```diff
+  function greet(name) {
+-   return 'Hello ' + name;
++   return `Hello ${name}!`;
+  }
+```
+
+## 数学公式
+
+### 行内公式
+
+这是一个行内公式：`E = mc²`
+
+### 块级公式
+
+```
+∫_{-∞}^{∞} e^{-x²} dx = √π
+```
+
+## 最佳实践
+
+### 组件选择
+
+- **信息展示**: 使用 Callout 组件突出重要信息
+- **代码示例**: 使用 Tabs 组件展示不同语言的代码
+- **操作指南**: 使用 Steps 组件创建分步指南
+- **FAQ**: 使用 Accordion 组件创建常见问题解答
+- **导航**: 使用 Cards 组件创建导航链接
+
+### 性能考虑
+
+- 避免在单个页面使用过多复杂组件
+- 合理使用懒加载
+- 优化图片和媒体资源
+
+### 可访问性
+
+- 为交互元素提供适当的 ARIA 标签
+- 确保键盘导航的可用性
+- 使用语义化的 HTML 结构
+
+通过合理使用这些组件，您可以创建出既美观又功能强大的文档页面。

@@ -16,7 +16,7 @@ export function useBaseOptions(): BaseLayoutProps {
   const t = useTranslations('Navigation');
   
   return {
-    githubUrl: 'https://github.com/frontendweb3/Nextify',
+    githubUrl: 'https://github.com/01MVP/NextjsLand',
     nav: {
       title: <Logo />,
       transparentMode: 'top' as const,

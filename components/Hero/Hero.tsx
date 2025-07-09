@@ -21,7 +21,7 @@ export function Hero() {
             {t('getStarted')}
           </Link>
           <ExternalLink
-            href="https://github.com/frontendweb3/Nextify"
+            href="https://github.com/01MVP/NextjsLand"
             className="flex items-center justify-center rounded-md border border-solid bg-fd-second text-fd-primary px-6 py-2 font-bold"
           >
             {t('github')}

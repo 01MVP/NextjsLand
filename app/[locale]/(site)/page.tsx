@@ -8,7 +8,7 @@ import { locales } from '@/app/i18n';
 
 export const metadata = createMetadata({
   title: 'Home',
-  description: 'Nextify is a prebuilt template for building documentation sites using Next.js and Fumadocs.',
+  description: 'NextjsLand is a prebuilt template for building documentation sites using Next.js and Fumadocs.',
   metadataBase: baseUrl,
 });
 

@@ -1,4 +1,4 @@
-# fumadocs-i18n-template
+# NextjsLand
 
 fork from [nextify](https://github.com/frontendweb3/nextify) add fumadocs i18n support according to 
 https://fumadocs.vercel.app/docs/ui/internationalization

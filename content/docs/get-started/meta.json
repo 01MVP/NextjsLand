@@ -1,10 +1,10 @@
 {
-	"pages": [
-		"introduction",
-    "features",
-    "system-requirements",
+  "pages": [
+    "index",
     "installation",
-    "uninstall",
-    "[GitHub](https://github.com/frontendweb3/Nextify)"
+    "project-structure",
+    "configuration",
+    "deployment",
+    "[GitHub](https://github.com/fumadocs/fumadocs)"
   ]
 }

@@ -1,15 +1,15 @@
 {
   "Hero": {
-    "title": "Create your ideal documentation website effortlessly with the Nextify",
+    "title": "Create your ideal documentation website effortlessly with NextjsLand",
     "getStarted": "Get Started",
     "github": "GitHub"
   },
   "Work": {
     "title": "How it works",
-    "description": "Discover how Nextify simplifies documentation creation",
+    "description": "Discover how NextjsLand simplifies documentation creation",
     "steps": "3 EASY STEPS",
     "step1": {
-      "title": "Clone Nextify Template",
+      "title": "Clone NextjsLand Template",
       "description": "Lorem ipsum dolor sit amet, elit ut aliquam, purus sit lorem ipsum dolor sit amet"
     },
     "step2": {
@@ -23,7 +23,7 @@
   },
   "FAQ": {
     "title": "Frequently Asked Questions",
-    "description": "Find answers to common questions about Nextify",
+    "description": "Find answers to common questions about NextjsLand",
     "questions": [
       {
         "key": 1,
@@ -51,11 +51,11 @@
   },
   "Testimonial": {
     "title": "What our users say",
-    "description": "Hear from developers who use Nextify"
+    "description": "Hear from developers who use NextjsLand"
   },
   "Newsletter": {
     "title": "Join our newsletter",
-    "description": "Keep up to date with related Nextify.",
+    "description": "Keep up to date with related NextjsLand.",
     "placeholder": "Enter your email",
     "submit": "Submit"
   },
@@ -121,4 +121,4 @@
     "photography": "Photography",
     "programming": "Programming"
   }
-} 
+}

@@ -1,0 +1,375 @@
+---
+title: 部署指南
+description: 学习如何将 NextjsLand模板部署到生产环境
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+
+本指南将帮助您将文档网站部署到各种平台。
+
+## 部署前准备
+
+在部署之前，请确保：
+
+- 项目可以在本地正常构建和运行
+- 所有必要的环境变量已配置
+- 代码已推送到 Git 仓库
+
+### 构建测试
+
+在部署前，先在本地测试构建：
+
+<Tabs groupId='package-manager' persist items={['pnpm', 'npm', 'yarn', 'bun']}>
+
+```bash tab="pnpm"
+pnpm build
+pnpm start
+```
+
+```bash tab="npm"
+npm run build
+npm start
+```
+
+```bash tab="yarn"
+yarn build
+yarn start
+```
+
+```bash tab="bun"
+bun run build
+bun start
+```
+
+</Tabs>
+
+## Vercel 部署
+
+Vercel 是部署 Next.js 应用的最佳选择，提供零配置部署。
+
+<Steps>
+
+<Step>
+
+### 连接 Git 仓库
+
+1. 访问 [Vercel Dashboard](https://vercel.com/dashboard)
+2. 点击 "New Project"
+3. 选择您的 Git 仓库
+4. 点击 "Import"
+
+</Step>
+
+<Step>
+
+### 配置项目设置
+
+在项目设置中：
+
+- **Framework Preset**: Next.js
+- **Build Command**: `pnpm build`（或您使用的包管理器）
+- **Output Directory**: `.next`
+- **Install Command**: `pnpm install`
+
+</Step>
+
+<Step>
+
+### 设置环境变量
+
+在 Vercel 项目设置中添加环境变量：
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
+```
+
+</Step>
+
+<Step>
+
+### 部署
+
+点击 "Deploy" 按钮，Vercel 将自动构建和部署您的网站。
+
+</Step>
+
+</Steps>
+
+### 自定义域名
+
+在 Vercel 项目设置的 "Domains" 部分添加您的自定义域名。
+
+## Netlify 部署
+
+Netlify 也是一个优秀的静态网站托管平台。
+
+<Steps>
+
+<Step>
+
+### 连接仓库
+
+1. 登录 [Netlify](https://netlify.com)
+2. 点击 "New site from Git"
+3. 选择您的 Git 提供商和仓库
+
+</Step>
+
+<Step>
+
+### 配置构建设置
+
+- **Build command**: `pnpm build && pnpm export`
+- **Publish directory**: `out`
+- **Node version**: 18 或更高
+
+</Step>
+
+<Step>
+
+### 添加构建配置
+
+创建 `netlify.toml` 文件：
+
+```toml title="netlify.toml"
+[build]
+  command = "pnpm build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+```
+
+</Step>
+
+</Steps>
+
+## GitHub Pages 部署
+
+使用 GitHub Actions 自动部署到 GitHub Pages。
+
+<Steps>
+
+<Step>
+
+### 创建 GitHub Actions 工作流
+
+创建 `.github/workflows/deploy.yml`：
+
+```yaml title=".github/workflows/deploy.yml"
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'pnpm'
+        
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8
+        
+    - name: Install dependencies
+      run: pnpm install
+      
+    - name: Build
+      run: pnpm build
+      
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./out
+```
+
+</Step>
+
+<Step>
+
+### 配置 Next.js 静态导出
+
+修改 `next.config.mjs`：
+
+```javascript title="next.config.mjs"
+const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+};
+```
+
+</Step>
+
+<Step>
+
+### 启用 GitHub Pages
+
+在仓库设置中：
+
+1. 转到 "Settings" > "Pages"
+2. 选择 "Deploy from a branch"
+3. 选择 "gh-pages" 分支
+
+</Step>
+
+</Steps>
+
+## 自托管部署
+
+### 使用 Docker
+
+创建 `Dockerfile`：
+
+```dockerfile title="Dockerfile"
+FROM node:18-alpine AS base
+
+# Install dependencies only when needed
+FROM base AS deps
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+
+COPY package.json pnpm-lock.yaml* ./
+RUN corepack enable pnpm && pnpm i --frozen-lockfile
+
+# Rebuild the source code only when needed
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+
+RUN corepack enable pnpm && pnpm build
+
+# Production image, copy all the files and run next
+FROM base AS runner
+WORKDIR /app
+
+ENV NODE_ENV production
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+
+EXPOSE 3000
+
+ENV PORT 3000
+
+CMD ["node", "server.js"]
+```
+
+### 构建和运行
+
+```bash
+# 构建镜像
+docker build -t fumadocs-app .
+
+# 运行容器
+docker run -p 3000:3000 fumadocs-app
+```
+
+## 性能优化
+
+### CDN 配置
+
+<Callout type="info">
+大多数现代部署平台都自动提供 CDN 支持。如果需要自定义 CDN，可以配置静态资源的 CDN 地址。
+</Callout>
+
+### 缓存策略
+
+在 `next.config.mjs` 中配置缓存头：
+
+```javascript title="next.config.mjs"
+const nextConfig = {
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
+};
+```
+
+## 监控和分析
+
+### 添加 Google Analytics
+
+在 `app/[locale]/layout.tsx` 中添加：
+
+```tsx
+import { GoogleAnalytics } from '@next/third-parties/google';
+
+export default function Layout({ children }) {
+  return (
+    <html>
+      <body>
+        {children}
+        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+      </body>
+    </html>
+  );
+}
+```
+
+### 性能监控
+
+使用 Vercel Analytics 或其他监控工具跟踪网站性能。
+
+## 故障排除
+
+### 常见问题
+
+1. **构建失败**: 检查 Node.js 版本和依赖兼容性
+2. **路由问题**: 确保多语言路由配置正确
+3. **静态资源 404**: 检查 `basePath` 和 `assetPrefix` 配置
+4. **环境变量**: 确保所有必要的环境变量都已设置
+
+### 调试技巧
+
+- 使用 `pnpm build` 在本地测试生产构建
+- 检查构建日志中的错误信息
+- 使用浏览器开发者工具检查网络请求
+
+## 下一步
+
+部署完成后，您可以：
+
+- 设置自定义域名和 SSL 证书
+- 配置 CDN 和缓存策略
+- 添加监控和分析工具
+- 设置自动化部署流程
