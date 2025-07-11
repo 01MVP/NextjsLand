@@ -2,7 +2,15 @@
   "Hero": {
     "title": "Create your ideal documentation website effortlessly with NextjsLand",
     "getStarted": "Get Started",
-    "github": "GitHub"
+    "github": "GitHub",
+    "badge": "✨ Modern Documentation Website Template",
+    "description": "🚀 Built with Next.js and Fumadocs, supports multi-language and dark mode, making documentation creation simple and fun",
+    "features": {
+      "multilingual": "Multi-language Support",
+      "responsive": "Responsive Design",
+      "darkMode": "Dark Mode",
+      "seo": "SEO Optimized"
+    }
   },
   "Work": {
     "title": "How it works",
@@ -10,49 +18,95 @@
     "steps": "3 EASY STEPS",
     "step1": {
       "title": "Clone NextjsLand Template",
-      "description": "Lorem ipsum dolor sit amet, elit ut aliquam, purus sit lorem ipsum dolor sit amet"
+      "description": "Clone the NextjsLand template from GitHub to get the complete project structure and configuration files"
     },
     "step2": {
       "title": "Remove Old content",
-      "description": "Lorem ipsum dolor sit amet, elit ut aliquam, purus sit lorem ipsum dolor sit amet"
+      "description": "Clean up example content, delete unnecessary files, and make space for your content"
     },
     "step3": {
       "title": "Start new content",
-      "description": "Lorem ipsum dolor sit amet, elit ut aliquam, purus sit lorem ipsum dolor sit amet"
-    }
+      "description": "Add your documentation, blog posts, and page content, customize styles and configuration"
+    },
+    "successMessage": "🎉 In just a few minutes, your documentation website will be up and running!"
   },
   "FAQ": {
     "title": "Frequently Asked Questions",
-    "description": "Find answers to common questions about NextjsLand",
+    "description": "Find answers to common questions about NextjsLand documentation template.",
+    "badge": "FAQ",
+    "moreQuestions": "Have other questions?",
     "questions": [
       {
         "key": 1,
-        "question": "How this theme is different from others in market?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+        "question": "What makes NextjsLand different from other documentation templates?",
+        "answer": "NextjsLand is built with modern technologies like Next.js 15, Fumadocs, and Tailwind CSS. It features built-in internationalization, dark mode support, responsive design, and SEO optimization out of the box."
       },
       {
         "key": 2,
-        "question": "What is your policy on distribution of Devjoy assets?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+        "question": "Can I use NextjsLand for commercial projects?",
+        "answer": "Yes, NextjsLand is open source and can be used for both personal and commercial projects. You can customize it according to your needs and deploy it anywhere."
       },
       {
         "key": 3,
-        "question": "How can I contribute to Devjoy?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+        "question": "How do I add new languages to my documentation?",
+        "answer": "NextjsLand supports internationalization through next-intl. Simply add your language files in the locales folder and update the routing configuration to support your new language."
       },
       {
         "key": 4,
-        "question": "What other themes do you have?",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+        "question": "What deployment options are available?",
+        "answer": "You can deploy NextjsLand on any platform that supports Next.js, including Vercel, Netlify, AWS, or your own server. The template is optimized for static generation and server-side rendering."
       }
     ],
-    "support": "Can't find the answer you're looking for? Reach out to our",
-    "supportLink": "customer support team."
+    "support": "We're here to help! Contact our support team for personalized assistance.",
+    "supportLink": "Contact Support"
   },
   "Testimonial": {
-    "title": "What our users say",
-    "description": "Hear from developers who use NextjsLand"
-  },
+      "title": "What Our Users Say",
+      "description": "Hear from developers and teams who have transformed their documentation workflow with NextjsLand.",
+      "badge": "Real User Feedback",
+      "stats": {
+        "activeUsers": "Active Users",
+        "satisfaction": "Satisfaction",
+        "support": "Technical Support"
+      },
+      "testimonials": [
+        {
+          "key": 1,
+          "name": "Alex Chen",
+          "title": "Frontend Developer",
+          "message": "NextjsLand helped me build a professional documentation site in minutes! The multi-language support and dark mode are fantastic. Highly recommend to all developers.",
+          "company": "ByteDance"
+        },
+        {
+          "key": 2,
+          "name": "Sarah Wilson",
+          "title": "Product Manager",
+          "message": "As a non-technical person, I can easily use NextjsLand to create and maintain documentation. Clean interface, powerful features, team collaboration has become more efficient.",
+          "company": "Tencent"
+        },
+        {
+          "key": 3,
+          "name": "David Wang",
+          "title": "Technical Director",
+          "message": "Our team used NextjsLand to refactor the entire documentation system. Performance improvement is obvious, SEO effect is also very good. This is a trustworthy solution.",
+          "company": "Alibaba"
+        },
+        {
+          "key": 4,
+          "name": "Emma Liu",
+          "title": "UI/UX Designer",
+          "message": "Modern and clean design style, responsive layout perfectly adapts to various devices. Custom theme feature allows our brand image to be well represented.",
+          "company": "Meituan"
+        },
+        {
+          "key": 5,
+          "name": "Michael Zhang",
+          "title": "Full Stack Developer",
+          "message": "The Next.js-based architecture makes deployment very simple. Vercel one-click deployment is really convenient. The documentation writing experience is also smooth.",
+          "company": "Xiaomi"
+        }
+      ]
+    },
   "Newsletter": {
     "title": "Join our newsletter",
     "description": "Keep up to date with related NextjsLand.",

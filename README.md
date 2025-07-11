@@ -7,7 +7,7 @@
 
 > 🌍 A modern, multilingual documentation template built with Next.js 15 and Fumadocs
 
-[中文文档](./README.zh.md) | [Live Demo](https://your-demo-url.com)
+[中文文档](./README.zh.md) | [Live Demo](https://nextjsland.netlify.app/)
 
 ## ✨ Features
 

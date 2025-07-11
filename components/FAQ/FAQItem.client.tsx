@@ -14,47 +14,35 @@ export default function FAQItem({ answer, id, question }: Omit<TypeFAQ, 'key'> &
 
   return (
     <div
-      className="relative my-3 w-full rounded-md border border-gray-300 px-12 py-8"
+      className="relative w-full border-b border-slate-200 dark:border-slate-800 py-6"
     >
       <div className="max-w-3xl">
-        <h2 className="text-xl font-bold ">{question}</h2>
+        <h2 className="text-lg font-medium text-slate-900 dark:text-slate-100 pr-8">{question}</h2>
         {openFAQ === id && (
-          <p className="font-inter mt-4 text-base font-light ">
+          <p className="font-inter mt-3 text-base text-slate-600 dark:text-slate-400">
             {answer}
           </p>
         )}
       </div>
       <button
         type="button"
-        className="absolute right-5 top-9 focus:outline-none"
+        className="absolute right-0 top-6 p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
         onClick={() => toggleFAQ(id)}
         aria-label={`Toggle answer for: ${question}`}
       >
         <svg
-          width="24"
-          height="24"
+          width="20"
+          height="20"
           viewBox="0 0 24 24"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-hidden="true"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className={`transition-transform duration-200 ${openFAQ === id ? 'rotate-45' : ''}`}
         >
-          <circle cx="12" cy="12" r="12" fill="white" />
-          <path
-            d="M7.04688 11.9999H16.9469"
-            stroke="black"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M12 7.05005V16.95"
-            stroke="black"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className={`${openFAQ === id ? "opacity-0" : "opacity-100"} transition-opacity duration-100 ease-in-out`}
-          />
+          <path d="M12 5v14" />
+          <path d="M5 12h14" />
         </svg>
       </button>
     </div>

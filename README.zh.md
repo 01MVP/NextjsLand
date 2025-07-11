@@ -7,7 +7,7 @@
 
 > 🌍 基于 Next.js 15 和 Fumadocs 构建的现代化多语言文档模板
 
-[English](./README.md) | [在线演示](https://your-demo-url.com)
+[English](./README.md) | [在线演示](https://nextjsland.netlify.app/)
 
 ## ✨ 特性
 

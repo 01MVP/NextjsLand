@@ -15,8 +15,11 @@ function HomeLayoutWithI18n({ children }: { children: ReactNode }) {
 export default function Layout({ children }: { children: ReactNode; }): React.ReactElement {
   return (
     <>
-      <Banner id="banner-1">
-        I failed my way to success - Thomas Edison
+      <Banner id="banner-1" className="bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 border-none">
+        <div className="flex items-center justify-center gap-2">
+          <span>💡</span>
+          <span className="font-medium">I failed my way to success - Thomas Edison</span>
+        </div>
       </Banner>
       <HomeLayoutWithI18n>
         {children}

@@ -2,7 +2,15 @@
   "Hero": {
     "title": "使用 NextjsLand 轻松创建您理想的文档网站",
     "getStarted": "开始使用",
-    "github": "GitHub"
+    "github": "GitHub",
+    "badge": "✨ 现代化文档网站模板",
+    "description": "🚀 基于 Next.js 和 Fumadocs 构建，支持多语言、深色模式，让文档创建变得简单有趣",
+    "features": {
+      "multilingual": "多语言支持",
+      "responsive": "响应式设计",
+      "darkMode": "深色模式",
+      "seo": "SEO 优化"
+    }
   },
   "Work": {
     "title": "工作原理",
@@ -10,49 +18,95 @@
     "steps": "3个简单步骤",
     "step1": {
       "title": "克隆 NextjsLand 模板",
-      "description": "Lorem ipsum dolor sit amet, elit ut aliquam, purus sit lorem ipsum dolor sit amet"
+      "description": "从 GitHub 克隆 NextjsLand 模板，获得完整的项目结构和配置文件"
     },
     "step2": {
       "title": "删除旧内容",
-      "description": "Lorem ipsum dolor sit amet, elit ut aliquam, purus sit lorem ipsum dolor sit amet"
+      "description": "清理示例内容，删除不需要的文件，为您的内容腾出空间"
     },
     "step3": {
       "title": "开始新内容",
-      "description": "Lorem ipsum dolor sit amet, elit ut aliquam, purus sit lorem ipsum dolor sit amet"
-    }
+      "description": "添加您的文档、博客和页面内容，自定义样式和配置"
+    },
+    "successMessage": "🎉 只需几分钟，您的文档网站就能上线运行！"
   },
   "FAQ": {
     "title": "常见问题",
-    "description": "查找有关 NextjsLand 的常见问题的答案",
+    "description": "查找关于 NextjsLand 文档模板的常见问题解答。",
+    "badge": "常见问题解答",
     "questions": [
       {
         "key": 1,
-        "question": "这个主题与市场上的其他主题有何不同？",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+        "question": "NextjsLand 与其他文档模板有什么不同？",
+        "answer": "NextjsLand 采用 Next.js 15、Fumadocs 和 Tailwind CSS 等现代技术构建。它内置了国际化、深色模式支持、响应式设计和 SEO 优化功能。"
       },
       {
         "key": 2,
-        "question": "您对 Devjoy 资产分发的政策是什么？",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+        "question": "我可以将 NextjsLand 用于商业项目吗？",
+        "answer": "是的，NextjsLand 是开源的，可以用于个人和商业项目。您可以根据需要进行自定义，并部署到任何地方。"
       },
       {
         "key": 3,
-        "question": "我如何为 Devjoy 做出贡献？",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+        "question": "如何为我的文档添加新语言？",
+        "answer": "NextjsLand 通过 next-intl 支持国际化。只需在 locales 文件夹中添加您的语言文件，并更新路由配置以支持新语言。"
       },
       {
         "key": 4,
-        "question": "您还有哪些其他主题？",
-        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna"
+        "question": "有哪些部署选项可用？",
+        "answer": "您可以将 NextjsLand 部署到任何支持 Next.js 的平台，包括 Vercel、Netlify、AWS 或您自己的服务器。该模板针对静态生成和服务器端渲染进行了优化。"
       }
     ],
-    "support": "找不到您要找的答案？请联系我们的",
-    "supportLink": "客户支持团队。"
+    "moreQuestions": "还有其他问题？",
+    "support": "我们随时为您提供帮助！联系我们的支持团队获取个性化协助。",
+    "supportLink": "联系支持"
   },
   "Testimonial": {
-    "title": "用户评价",
-    "description": "听听使用 NextjsLand 的开发者怎么说"
-  },
+      "title": "用户评价",
+      "description": "来自使用 NextjsLand 的开发者们的真实反馈",
+      "badge": "用户真实反馈",
+      "stats": {
+        "activeUsers": "活跃用户",
+        "satisfaction": "满意度",
+        "support": "技术支持"
+      },
+      "testimonials": [
+        {
+          "key": 1,
+          "name": "李明",
+          "title": "前端开发工程师",
+          "message": "NextjsLand 让我在几分钟内就搭建了一个专业的文档网站！多语言支持和深色模式都很棒，强烈推荐给所有开发者。",
+          "company": "字节跳动"
+        },
+        {
+          "key": 2,
+          "name": "张小雨",
+          "title": "产品经理",
+          "message": "作为非技术人员，我也能轻松使用 NextjsLand 创建和维护文档。界面简洁，功能强大，团队协作变得更高效了。",
+          "company": "腾讯"
+        },
+        {
+          "key": 3,
+          "name": "王建国",
+          "title": "技术总监",
+          "message": "我们团队使用 NextjsLand 重构了整个文档系统，性能提升明显，SEO 效果也很好。这是一个值得信赖的解决方案。",
+          "company": "阿里巴巴"
+        },
+        {
+          "key": 4,
+          "name": "陈思思",
+          "title": "UI/UX 设计师",
+          "message": "设计风格现代简洁，响应式布局完美适配各种设备。自定义主题功能让我们的品牌形象得到了很好的体现。",
+          "company": "美团"
+        },
+        {
+          "key": 5,
+          "name": "刘德华",
+          "title": "全栈开发者",
+          "message": "基于 Next.js 的架构让部署变得非常简单，Vercel 一键部署真的太方便了。文档写作体验也很流畅。",
+          "company": "小米"
+        }
+      ]
+    },
   "Newsletter": {
     "title": "订阅我们的通讯",
     "description": "及时了解 NextjsLand 的相关信息",

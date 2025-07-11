@@ -2,20 +2,44 @@
 
 import React from 'react'
 
-export function WorkCard({ title, description, step, hide = true }: { title: string, description: string, step: number, hide?: boolean }) {
+export function WorkCard({ 
+  title, 
+  description, 
+  step, 
+  hide = true, 
+  icon = '📋', 
+  color = 'from-gray-500 to-gray-600' 
+}: { 
+  title: string, 
+  description: string, 
+  step: number, 
+  hide?: boolean,
+  icon?: string,
+  color?: string
+}) {
 
   return (
-    <div className="relative my-8 flex w-full rounded-md lg:mx-8 lg:flex-col">
-      <div className="flex h-16 w-16 items-center justify-center rounded-md text-black bg-gray-200">
-        <h2 className="text-3xl font-medium">{step}</h2>
-      </div>
-      <div className="ml-6 lg:ml-0">
-        <h2 className="mb-5 text-xl font-medium lg:mt-8">
-          {title}
-        </h2>
-        <p className="font-inter max-w-md pr-5 text-base">
-          {description}
-        </p>
+    <div className="group relative my-8 flex w-full lg:mx-8 lg:flex-col p-6">
+      <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+        {/* 图标和步骤 */}
+        <div className="relative mb-6">
+          <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800">
+            <span className="text-xl">{icon}</span>
+          </div>
+          <div className="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 dark:bg-slate-100">
+            <span className="text-xs font-medium text-white dark:text-slate-900">{step}</span>
+          </div>
+        </div>
+        
+        {/* 内容 */}
+        <div className="flex-1">
+          <h3 className="mb-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
+            {title}
+          </h3>
+          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+            {description}
+          </p>
+        </div>
       </div>
       {/* MOBILE - HOW IT WORKS LINE */}
       {hide === true ? <svg
