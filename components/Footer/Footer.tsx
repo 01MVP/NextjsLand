@@ -30,7 +30,7 @@ export function Footer() {
             </div>
             <div className="mt-12 grid w-full max-w-52 grid-flow-col grid-cols-3 mx-auto gap-3 mb-8 md:mb-0">
               {
-                socialData?.map((link, index) => (
+                socialData?.map((link) => (
                   <ExternalLink
                     key={link.name}
                     href={link.url}

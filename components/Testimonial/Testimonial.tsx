@@ -65,14 +65,13 @@ export function Testimonial() {
         <div className="mb-8 py-4 md:mb-12 lg:mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {
-            testimonial.map((item, index) => (
+            testimonial.map((item) => (
               <div key={item.key}>
                 <Item 
                   title={item.title} 
                   message={item.message} 
                   name={item.name} 
                   image={item.image}
-                  rating={item.rating}
                   company={item.company}
                 />
               </div>
@@ -91,14 +90,12 @@ function Item({
   message, 
   name, 
   image, 
-  rating = 5, 
   company 
 }: { 
   name: string; 
   message: string; 
   title: string; 
   image: string;
-  rating?: number;
   company?: string;
 }) {
   return (

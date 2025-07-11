@@ -13,10 +13,7 @@ const zhCn: Partial<Translations> = {
   // Add other translations as needed
 };
 
-const zhTw: Partial<Translations> = {
-  search: '搜尋',
-  // Add other translations as needed
-};
+
 
 // Available languages that will be displayed on UI
 // Make sure `locale` is consistent with your i18n config
@@ -26,23 +23,18 @@ const localeMappings = [
     locale: 'en',
   },
   {
-    name: 'Simplified Chinese',
+    name: '简体中文',
     locale: 'zh-cn',
   },
-  {
-    name: 'Traditional Chinese',
-    locale: 'zh-tw',
-  },
+
 ];
 
 type TranslationsMap = {
   'zh-cn': Partial<Translations>;
-  'zh-tw': Partial<Translations>;
 };
 
 const translationsMap: TranslationsMap = {
-  'zh-cn': zhCn,
-  'zh-tw': zhTw
+  'zh-cn': zhCn
 };
 
 // Generate static params for all supported locales

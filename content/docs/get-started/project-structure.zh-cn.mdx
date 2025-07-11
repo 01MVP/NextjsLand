@@ -40,7 +40,7 @@ import { File, Folder, Files } from 'fumadocs-ui/components/files';
   <Folder name="content" defaultOpen>
     <Folder name="docs" defaultOpen>
       <File name="index.zh-cn.mdx" />
-      <File name="index.zh-tw.mdx" />
+
       <File name="meta.json" />
       <Folder name="get-started">
         <File name="index.zh-cn.mdx" />
@@ -51,7 +51,7 @@ import { File, Folder, Files } from 'fumadocs-ui/components/files';
     <Folder name="blog">
       <File name="example-blog.mdx" />
       <File name="example-blog.zh-cn.mdx" />
-      <File name="example-blog.zh-tw.mdx" />
+
       <File name="7-useful-tips-from-python-experts-in-programming.md" />
     </Folder>
     <Folder name="pages">
@@ -69,9 +69,7 @@ import { File, Folder, Files } from 'fumadocs-ui/components/files';
     <Folder name="zh-cn">
       <File name="index.json" />
     </Folder>
-    <Folder name="zh-tw">
-      <File name="index.json" />
-    </Folder>
+
   </Folder>
   <File name="next.config.mjs" />
   <File name="source.config.ts" />
@@ -102,7 +100,7 @@ import { File, Folder, Files } from 'fumadocs-ui/components/files';
 
 博客目录用于存放博客文章，支持以下功能：
 
-- **多语言支持**: 使用 `.zh-cn.mdx`、`.zh-tw.mdx` 等后缀
+- **多语言支持**: 使用 `.zh-cn.mdx` 等后缀
 - **标签系统**: 在 frontmatter 中使用 `tags` 字段
 - **分类功能**: 支持按分类组织文章
 - **SEO 优化**: 自动生成 meta 标签和结构化数据
@@ -112,7 +110,7 @@ import { File, Folder, Files } from 'fumadocs-ui/components/files';
 blog/
 ├── example-blog.mdx          # 英文博客
 ├── example-blog.zh-cn.mdx    # 中文博客
-├── example-blog.zh-tw.mdx    # 繁体中文博客
+
 └── tech-tips.zh-cn.mdx       # 技术分享文章
 ```
 
@@ -151,7 +149,7 @@ pages/
 
 - **`en/`**: 英文翻译
 - **`zh-cn/`**: 简体中文翻译
-- **`zh-tw/`**: 繁体中文翻译
+
 
 ## 重要配置文件
 
@@ -186,7 +184,7 @@ Fumadocs 的配置文件，定义：
 文档文件使用语言后缀命名：
 
 - `filename.zh-cn.mdx` - 简体中文
-- `filename.zh-tw.mdx` - 繁体中文
+
 - `filename.mdx` - 默认语言（英文）
 
 ### 元数据文件

@@ -33,7 +33,7 @@ export function FAQ() {
         
         {/* FAQ 列表 */}
         <div className="mt-10 flex w-full max-w-4xl flex-col space-y-2">
-          {faqQuestions?.map((faq, index) => (
+          {faqQuestions?.map((faq) => (
             <div key={faq.key}>
               <FAQItem 
                 id={faq.key} 

@@ -89,7 +89,7 @@ nextjsland/
 1. **添加语言配置**
    ```typescript
    // lib/i18n.ts
-   export const locales = ['en', 'zh-cn', 'zh-tw', 'your-locale'];
+   export const locales = ['en', 'zh-cn', 'your-locale'];
    ```
 
 2. **创建翻译文件**

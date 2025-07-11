@@ -19,7 +19,7 @@ import type { I18nConfig } from 'fumadocs-core/i18n';
 
 export const i18n: I18nConfig = {
   defaultLanguage: 'en',
-  languages: ['en', 'zh-cn', 'zh-tw'],
+  languages: ['en', 'zh-cn'],
 };
 ```
 
@@ -32,7 +32,7 @@ import { defineRouting } from 'next-intl/routing';
 
 export const routing = defineRouting({
   // 支持的所有语言列表
-  locales: ['en', 'zh-cn', 'zh-tw'],
+  locales: ['en', 'zh-cn'],
   
   // 默认语言
   defaultLocale: 'en',
@@ -46,7 +46,7 @@ export const routing = defineRouting({
 
 在 `locales/` 目录下为每种语言创建翻译文件：
 
-<Tabs items={['zh-cn', 'zh-tw', 'en']}>
+<Tabs items={['zh-cn', 'en']}>
 
 ```json tab="zh-cn" title="locales/zh-cn/index.json"
 {
@@ -62,19 +62,7 @@ export const routing = defineRouting({
 }
 ```
 
-```json tab="zh-tw" title="locales/zh-tw/index.json"
-{
-  "Hero": {
-    "title": "構建現代化文檔網站",
-    "description": "使用 Fumadocs 創建美觀、快速的文檔"
-  },
-  "Navigation": {
-    "docs": "文檔",
-    "blog": "博客",
-    "about": "關於"
-  }
-}
-```
+
 
 ```json tab="en" title="locales/en/index.json"
 {

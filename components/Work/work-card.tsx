@@ -7,15 +7,13 @@ export function WorkCard({
   description, 
   step, 
   hide = true, 
-  icon = '📋', 
-  color = 'from-gray-500 to-gray-600' 
+  icon = '📋' 
 }: { 
   title: string, 
   description: string, 
   step: number, 
   hide?: boolean,
-  icon?: string,
-  color?: string
+  icon?: string
 }) {
 
   return (

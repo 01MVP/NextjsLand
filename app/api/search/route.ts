@@ -13,14 +13,6 @@ export const { GET } = createFromSource(source, undefined, {
       },
     },
 
-    'zh-tw': {
-      tokenizer: createTokenizer(),
-      search: {
-        threshold: 1,
-        tolerance: 1,
-      },
-    },
-
     // use the English tokenizer
     en: 'english',
   },

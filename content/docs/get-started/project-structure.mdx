@@ -41,7 +41,7 @@ This page will detail the directory structure and the purpose of each file in th
     <Folder name="docs" defaultOpen>
       <File name="index.mdx" />
       <File name="index.zh-cn.mdx" />
-      <File name="index.zh-tw.mdx" />
+
       <File name="meta.json" />
       <Folder name="get-started">
         <File name="index.mdx" />
@@ -52,7 +52,7 @@ This page will detail the directory structure and the purpose of each file in th
     <Folder name="blog">
       <File name="example-blog.mdx" />
       <File name="example-blog.zh-cn.mdx" />
-      <File name="example-blog.zh-tw.mdx" />
+
       <File name="7-useful-tips-from-python-experts-in-programming.md" />
     </Folder>
     <Folder name="pages">
@@ -70,9 +70,7 @@ This page will detail the directory structure and the purpose of each file in th
     <Folder name="zh-cn">
       <File name="index.json" />
     </Folder>
-    <Folder name="zh-tw">
-      <File name="index.json" />
-    </Folder>
+
   </Folder>
   <File name="next.config.mjs" />
   <File name="source.config.ts" />
@@ -103,7 +101,7 @@ Stores all content files:
 
 The blog directory stores blog articles with the following features:
 
-- **Multi-language support**: Use suffixes like `.zh-cn.mdx`, `.zh-tw.mdx`
+- **Multi-language support**: Use suffixes like `.zh-cn.mdx`
 - **Tag system**: Use `tags` field in frontmatter
 - **Category functionality**: Support organizing articles by categories
 - **SEO optimization**: Automatically generate meta tags and structured data
@@ -113,7 +111,7 @@ Example file structure:
 blog/
 ├── example-blog.mdx          # English blog
 ├── example-blog.zh-cn.mdx    # Chinese blog
-├── example-blog.zh-tw.mdx    # Traditional Chinese blog
+
 └── tech-tips.zh-cn.mdx       # Tech sharing article
 ```
 
@@ -152,7 +150,7 @@ Internationalization translation files:
 
 - **`en/`**: English translations
 - **`zh-cn/`**: Simplified Chinese translations
-- **`zh-tw/`**: Traditional Chinese translations
+
 
 ## Important Configuration Files
 
@@ -187,7 +185,7 @@ Middleware handling internationalization routing, responsible for:
 Document files use language suffixes:
 
 - `filename.zh-cn.mdx` - Simplified Chinese
-- `filename.zh-tw.mdx` - Traditional Chinese
+
 - `filename.mdx` - Default language (English)
 
 ### Metadata Files

@@ -12,22 +12,19 @@ export function Work() {
       step: 1,
       title: t('step1.title'),
       description: t('step1.description'),
-      icon: '📥',
-      color: 'from-blue-500 to-cyan-500'
+      icon: '📥'
     },
     {
       step: 2,
       title: t('step2.title'),
       description: t('step2.description'),
-      icon: '🗑️',
-      color: 'from-purple-500 to-pink-500'
+      icon: '🗑️'
     },
     {
       step: 3,
       title: t('step3.title'), 
       description: t('step3.description'),
       icon: '✨',
-      color: 'from-green-500 to-emerald-500',
       hide: false
     }
   ];
@@ -67,7 +64,6 @@ export function Work() {
                 title={li.title} 
                 description={li.description}
                 icon={li.icon}
-                color={li.color}
               />
             ))
           }
